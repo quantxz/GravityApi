@@ -55,7 +55,7 @@ model mainChars {
 
   relatives           mainCharsRelatives[]
 
-  @@map("mainChars")
+  @@map("mainchars")
 }
 
 model mainCharsRelatives {
@@ -83,6 +83,6 @@ model mainCharsRelatives {
   mainName              String
   mainChar            mainChars @relation(fields: [mainName], references: [name])
 
-  @@map("MainCharsRelatives")
+  @@map("maincharsrelatives")
 }
 
