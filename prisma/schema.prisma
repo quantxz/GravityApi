@@ -41,7 +41,7 @@ model Books {
 
 model mainChars {
   name                String @id @unique       @default("")
-  fisrt_episode       String @db.VarChar(255)  @default("")
+  first_episode       String @db.VarChar(255)  @default("")
   last_episode        String @db.VarChar(255)  @default("")
   voice               String @db.VarChar(255)  @default("")
   age                 String @db.VarChar(255)  @default("")
