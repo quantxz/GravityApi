@@ -8,50 +8,50 @@ datasource db {
 
 model Episodes {
   id                Int @id @unique @default(autoincrement())
-  title             String @db.VarChar(255) @default("")
-  ptBr_title        String @db.VarChar(255) @default("")
-  first_exibition   String @db.VarChar(255) @default("")
+  title             String @db.VarChar(1000) @default("")
+  ptBr_title        String @db.VarChar(1000) @default("")
+  first_exibition   String @db.VarChar(1000) @default("")
   season            Int @default(1)
-  directed_by       String @db.VarChar(255)  @default("")
-  image             String @db.VarChar(255)  @default("")
-  written_by        String @db.VarChar(255)  @default("")
+  directed_by       String @db.VarChar(1000)  @default("")
+  image             String @db.VarChar(1000)  @default("")
+  written_by        String @db.VarChar(1000)  @default("")
 
   @@map("episodes")
 }
 
 model Books {
   id                Int @id @unique @default(autoincrement()) 
-  title             String @db.VarChar(255)  @default("")
-  titleBr           String @db.VarChar(255)  @default("")
-  format            String @db.VarChar(255)  @default("")
-  formatBr          String @db.VarChar(255)  @default("")
-  mainGenre         String @db.VarChar(255)  @default("")
-  mainGenreBr       String @db.VarChar(255)  @default("")
+  title             String @db.VarChar(1000)  @default("")
+  titleBr           String @db.VarChar(1000)  @default("")
+  format            String @db.VarChar(1000)  @default("")
+  formatBr          String @db.VarChar(1000)  @default("")
+  mainGenre         String @db.VarChar(1000)  @default("")
+  mainGenreBr       String @db.VarChar(1000)  @default("")
   pages             Int @default(0)
   pagesBr           Int @default(0)
-  published         String @db.VarChar(255)  @default("")
-  publishedBr       String @db.VarChar(255)  @default("")
-  rating            String @db.VarChar(255)  @default("")
-  ratingBr          String @db.VarChar(255)  @default("")
-  author            String @db.VarChar(255)  @default("")
-  image             String @db.VarChar(255)  @default("")
+  published         String @db.VarChar(1000)  @default("")
+  publishedBr       String @db.VarChar(1000)  @default("")
+  rating            String @db.VarChar(1000)  @default("")
+  ratingBr          String @db.VarChar(1000)  @default("")
+  author            String @db.VarChar(1000)  @default("")
+  image             String @db.VarChar(1000)  @default("")
 
   @@map("books")
 }
 
 model mainChars {
   name                String @id @unique       @default("")
-  first_episode       String @db.VarChar(255)  @default("")
-  last_episode        String @db.VarChar(255)  @default("")
-  voice               String @db.VarChar(255)  @default("")
-  age                 String @db.VarChar(255)  @default("")
-  born                String @db.VarChar(255)  @default("")
-  ocuppation          String @db.VarChar(255)  @default("")
-  inspiration         String @db.VarChar(255)  @default("")
-  likes               String @db.VarChar(255)  @default("")
-  dislikes            String @db.VarChar(255)  @default("")
-  description         String @db.VarChar(255)  @default("")
-  image               String @db.VarChar(255)  @default("")
+  first_episode       String @db.VarChar(1000)  @default("")
+  last_episode        String @db.VarChar(1000)  @default("")
+  voice               String @db.VarChar(1000)  @default("")
+  age                 String @db.VarChar(1000)  @default("")
+  born                String @db.VarChar(1000)  @default("")
+  ocuppation          String @db.VarChar(1000)  @default("")
+  inspiration         String @db.VarChar(1000)  @default("")
+  likes               String @db.VarChar(1000)  @default("")
+  dislikes            String @db.VarChar(1000)  @default("")
+  description         String @db.VarChar(1000)  @default("")
+  image               String @db.VarChar(1000)  @default("")
 
   relatives           mainCharsRelatives[]
 
@@ -60,25 +60,25 @@ model mainChars {
 
 model mainCharsRelatives {
   id                  Int    @id @unique      @default(autoincrement()) 
-  parents             String @db.VarChar(255) @default("")
-  sister_or_brother   String @db.VarChar(255) @default("")
-  grandfather         String @db.VarChar(255) @default("")
+  parents             String @db.VarChar(1000) @default("")
+  sister_or_brother   String @db.VarChar(1000) @default("")
+  grandfather         String @db.VarChar(1000) @default("")
 
-  great_grandfather_or_great_grandmother String @db.VarChar(255) @default("")
+  great_grandfather_or_great_grandmother String @db.VarChar(1000) @default("")
 
-  granduncle          String @db.VarChar(255) @default("")
-  ex_grandaunt_in_law String @db.VarChar(255) @default("")
+  granduncle          String @db.VarChar(1000) @default("")
+  ex_grandaunt_in_law String @db.VarChar(1000) @default("")
   
-  great_niece_or_great_nephew String @db.VarChar(255) @default("")
-  nephew_or_niece_in_law      String @db.VarChar(255) @default("")
+  great_niece_or_great_nephew String @db.VarChar(1000) @default("")
+  nephew_or_niece_in_law      String @db.VarChar(1000) @default("")
 
-  ex_Wife             String @db.VarChar(255) @default("")
-  ancestor            String @db.VarChar(255) @default("")
+  ex_Wife             String @db.VarChar(1000) @default("")
+  ancestor            String @db.VarChar(1000) @default("")
 
-  maternal_cousin     String @db.VarChar(255) @default("")
+  maternal_cousin     String @db.VarChar(1000) @default("")
   
-  maternal_grandfather String @db.VarChar(255) @default("") 
-  maternal_grandmother String @db.VarChar(255) @default("")
+  maternal_grandfather String @db.VarChar(1000) @default("") 
+  maternal_grandmother String @db.VarChar(1000) @default("")
 
   mainName              String
   mainChar            mainChars @relation(fields: [mainName], references: [name])
