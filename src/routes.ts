@@ -1,11 +1,9 @@
 import { Request, Response, Router } from "express";
-import app from "./app";
+import { knexPg }   from "./configs/knexConfig";
 const routes: Router = Router();
 
 routes.get("/", (req: Request, res: Response) => {
-    return res.status(200).json({
-        message: "tudo ok"
-    })
+    return res.json(knexPg('episodes').select("*"))
 });
 
 export default routes;
