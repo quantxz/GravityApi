@@ -28,7 +28,6 @@ model Books {
   mainGenre         String @db.VarChar(1000)  @default("")
   mainGenreBr       String @db.VarChar(1000)  @default("")
   pages             Int @default(0)
-  pagesBr           Int @default(0)
   published         String @db.VarChar(1000)  @default("")
   publishedBr       String @db.VarChar(1000)  @default("")
   rating            String @db.VarChar(1000)  @default("")

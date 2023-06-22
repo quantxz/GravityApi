@@ -10,7 +10,7 @@ interface episodesIinterface {
 
 interface mainCharsInterface {
     name: string,
-    fisrt_episode: string,
+    first_episode: string,
     last_episode: string,
     voice: string,
     age: string,
@@ -23,4 +23,21 @@ interface mainCharsInterface {
     image: string
 }
 
-export { episodesIinterface, mainCharsInterface }
+interface BooksInterface {
+    title: string,
+    titleBr: string,
+    format: string,
+    formatBr: string,
+    mainGenre: string,
+    mainGenreBr: string,
+    pages: string,
+    published: string,
+    publishedBr: string,
+    rating: string,
+    ratingBr: string,
+    author: string,
+    image: string
+
+}
+
+export { episodesIinterface, mainCharsInterface, BooksInterface }
