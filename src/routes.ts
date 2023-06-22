@@ -1,8 +1,11 @@
 import { Request, Response, Router } from "express";
+import { PrismaClient } from "@prisma/client";
 const routes: Router = Router();
 
-routes.get("/", (req: Request, res: Response) => {
-    return res.json("deu certo")
+routes.get("/", async (req: Request, res: Response) => {
+    const episodes = await PrismaClient.episodes.findMany()
+    
+    return res.json(episodes)
 });
 
 export default routes;
