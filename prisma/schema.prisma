@@ -71,7 +71,7 @@ model mainCharsRelatives {
   great_niece_or_great_nephew String @db.VarChar(1000) @default("")
   nephew_or_niece_in_law      String @db.VarChar(1000) @default("")
 
-  ex_Wife             String @db.VarChar(1000) @default("")
+  ex_wife             String @db.VarChar(1000) @default("")
   ancestor            String @db.VarChar(1000) @default("")
 
   maternal_cousin     String @db.VarChar(1000) @default("")
@@ -79,8 +79,8 @@ model mainCharsRelatives {
   maternal_grandfather String @db.VarChar(1000) @default("") 
   maternal_grandmother String @db.VarChar(1000) @default("")
 
-  mainName              String
-  mainChar            mainChars @relation(fields: [mainName], references: [name])
+  charactername              String
+  mainChar            mainChars @relation(fields: [charactername], references: [name])
 
   @@map("maincharsrelatives")
 }

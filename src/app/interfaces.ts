@@ -40,4 +40,22 @@ interface BooksInterface {
 
 }
 
-export { episodesIinterface, mainCharsInterface, BooksInterface }
+interface mainCharsRelativesInterface {
+    parents?: string,
+    sister_or_brother?: string,
+    grandfather?: string,
+    great_grandfather_or_great_grandmother?: string,
+    granduncle?: string,
+    ex_grandaunt_in_law?: string,
+    great_niece_or_great_nephew?: string,
+    nephew_or_niece_in_law?: string,
+    ex_wife?: string,
+    ancestor?: string,
+    maternal_cousin?: string,
+    maternal_grandfather?: string,
+    maternal_grandmother?: string,
+    charactername?: string,
+
+}
+
+export { episodesIinterface, mainCharsInterface, BooksInterface, mainCharsRelativesInterface }
