@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url  	= env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Episodes {
+  id                Int @id @unique @default(autoincrement())
+  title             String @db.VarChar(255) @default("")
+  ptBr_title        String @db.VarChar(255) @default("")
+  first_exibition   String @db.VarChar(255) @default("")
+  season            Int @default(1)
+  directed_by       String @db.VarChar(255)  @default("")
+  image             String @db.VarChar(255)  @default("")
+  written_by        String @db.VarChar(255)  @default("")
+
+  @@map("episodes")
+}
+
+model Books {
+  id                Int @id @unique @default(autoincrement()) 
+  title             String @db.VarChar(255)  @default("")
+  titleBr           String @db.VarChar(255)  @default("")
+  format            String @db.VarChar(255)  @default("")
+  formatBr          String @db.VarChar(255)  @default("")
+  mainGenre         String @db.VarChar(255)  @default("")
+  mainGenreBr       String @db.VarChar(255)  @default("")
+  pages             Int @default(0)
+  pagesBr           Int @default(0)
+  published         String @db.VarChar(255)  @default("")
+  publishedBr       String @db.VarChar(255)  @default("")
+  rating            String @db.VarChar(255)  @default("")
+  ratingBr          String @db.VarChar(255)  @default("")
+  author            String @db.VarChar(255)  @default("")
+  image             String @db.VarChar(255)  @default("")
+
+  @@map("books")
+}
+
+model mainChars {
+  name                String @id @unique       @default("")
+  fisrt_episode       String @db.VarChar(255)  @default("")
+  last_episode        String @db.VarChar(255)  @default("")
+  voice               String @db.VarChar(255)  @default("")
+  age                 String @db.VarChar(255)  @default("")
+  born                String @db.VarChar(255)  @default("")
+  ocuppation          String @db.VarChar(255)  @default("")
+  inspiration         String @db.VarChar(255)  @default("")
+  likes               String @db.VarChar(255)  @default("")
+  dislikes            String @db.VarChar(255)  @default("")
+  description         String @db.VarChar(255)  @default("")
+  image               String @db.VarChar(255)  @default("")
+
+  relatives           mainCharsRelatives[]
+
+  @@map("mainChars")
+}
+
+model mainCharsRelatives {
+  id                  Int    @id @unique      @default(autoincrement()) 
+  parents             String @db.VarChar(255) @default("")
+  sister_or_brother   String @db.VarChar(255) @default("")
+  grandfather         String @db.VarChar(255) @default("")
+
+  great_grandfather_or_great_grandmother String @db.VarChar(255) @default("")
+
+  granduncle          String @db.VarChar(255) @default("")
+  ex_grandaunt_in_law String @db.VarChar(255) @default("")
+  
+  great_niece_or_great_nephew String @db.VarChar(255) @default("")
+  nephew_or_niece_in_law      String @db.VarChar(255) @default("")
+
+  ex_Wife             String @db.VarChar(255) @default("")
+  ancestor            String @db.VarChar(255) @default("")
+
+  maternal_cousin     String @db.VarChar(255) @default("")
+  
+  maternal_grandfather String @db.VarChar(255) @default("") 
+  maternal_grandmother String @db.VarChar(255) @default("")
+
+  mainName              String
+  mainChar            mainChars @relation(fields: [mainName], references: [name])
+
+  @@map("relatives")
+}
+

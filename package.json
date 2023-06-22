@@ -1,0 +1,25 @@
+{
+  "name": "RestFulllGfAPI",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT", 
+  "scripts": {
+    "dev": "nodemon ./src/server"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.16.0",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.3.1",
+    "cuid": "^3.0.0",
+    "express": "^4.18.2",
+    "kafkajs": "^2.2.4",
+    "knex": "^2.4.2",
+    "knext": "^0.1.0",
+    "nodemon": "^2.0.22",
+    "sucrase": "^3.32.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13"
+  }
+}
