@@ -83,6 +83,6 @@ model mainCharsRelatives {
   mainName              String
   mainChar            mainChars @relation(fields: [mainName], references: [name])
 
-  @@map("relatives")
+  @@map("MainCharsRelatives")
 }
 
