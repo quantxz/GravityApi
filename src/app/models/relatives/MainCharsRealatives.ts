@@ -3,7 +3,7 @@ import { mainCharsRelativesInterface } from "../../interfaces";
 
 export const CreateRelatives = async (data: mainCharsRelativesInterface) => {
     try {
-        const query = 'INSERT INTO maincharsrelatives (parents, sister_or_brother, grandfather, great_grandfather_or_great_grandmother, granduncle, ex_grandaunt_in_law, great_niece_or_great_nephew, nephew_or_niece_in_law, ex_wife, ancestor, maternal_cousin, maternal_grandfather, maternal_grandmother, characternam") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)'
+        const query = 'INSERT INTO maincharsrelatives (parents, sister_or_brother, grandfather, great_grandfather_or_great_grandmother, granduncle, ex_grandaunt_in_law, great_niece_or_great_nephew, nephew_or_niece_in_law, ex_wife, ancestor, maternal_cousin, maternal_grandfather, maternal_grandmother, charactername) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)'
 
         const values = [
             data.parents || "", 
