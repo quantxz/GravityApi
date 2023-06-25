@@ -1,23 +1,35 @@
 import { Request, Response } from "express";
 import { CreateEpisode } from "../models/episodes/insertEpisodesModel"
-import { pool } from "../../configs/PG";
+import { connection } from "../../configs/connection";
 
 class episodeController {
     public async ViewEpisode(req: Request, res: Response) {
-        const query = 'SELECT * FROM episodes';
+        try {
+            const query = 'SELECT * FROM episodes';
     
-        const { rows } = await pool.query(query);
-        return res.status(200).json(rows)
+            const queryResults = await connection.promise().query(query);
+            return res.status(200).json(queryResults[0])
+
+        } catch(err) {
+            return res.status(500).json(err)
+        }
 
     }
     
     public async insertEpisode(req: Request, res: Response) {
-        const { ...data } = req.body;
+        try {
+            const { ...data } = req.body;
 
-        await CreateEpisode(data)
+            await CreateEpisode(data)
+    
+            const query = 'SELECT * FROM episodes';
+            const queryResults = await connection.promise().query(query);
+            
+            return res.status(200).json(queryResults[0])
 
-        const query = 'SELECT * FROM episodes';
-        return res.json(query)
+        } catch(err) {
+            return res.status(500).json(err)
+        }
     }
 }
 

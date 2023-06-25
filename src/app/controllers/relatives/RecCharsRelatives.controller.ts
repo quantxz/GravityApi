@@ -1,15 +1,14 @@
 import { Request, Response } from "express";
-import { connection } from "../../configs/connection";
-import { CreateBook } from "../models/Books/InsertBooksModel";
+import { connection } from "../../../configs/connection";
+import { CreateRecRelatives } from "../../models/relatives/recCharsRelatives";
 
-
-class booksController {
-    public async ViewBooks(req: Request, res: Response) {
+class RecRelatives {
+    public async ViewRelatives(req: Request, res: Response) {
         try {
-            const query = 'SELECT * FROM books'
+            const query = 'SELECT * FROM recurrentscharsrelatives'
 
             const queryResult = await connection.promise().query(query)
-    
+
             return res.status(200).json(queryResult[0])
 
         } catch(err) {
@@ -17,23 +16,22 @@ class booksController {
         }
     }
 
-    public async InsertBook(req: Request, res: Response) {
+    public async InsertRelations(req: Request, res: Response) {
         try {
             const { ...data } = req.body;
-            const query = 'SELECT * FROM books'
 
-            await CreateBook(data)
+            const query = 'SELECT * FROM recurrentscharsrelatives'
+
+            await CreateRecRelatives(data)
 
             const queryResult = await connection.promise().query(query)
-            
+
             return res.status(200).json(queryResult[0])
-    
 
         } catch(err) {
             return res.status(500).json(err)
         }
-
     }
 }
 
-export default new booksController
+export default new RecRelatives

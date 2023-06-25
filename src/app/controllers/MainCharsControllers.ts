@@ -1,22 +1,35 @@
 import { Request, Response } from "express";
-import { createMainCharacters } from "../models/MainChars/InsertMainChars";
-import { pool } from "../../configs/PG";
+import { createMainCharacters } from "../models/Chars/InsertMainChars";
+import { connection } from "../../configs/connection";
 
 class mainCharsController {
     public async viewMainChars(req: Request, res: Response) {
-
+        try {
+            
         const query = 'SELECT * FROM mainChars'
-        const { rows } = await pool.query(query)
+        const queryResults = await connection.promise().query(query)
 
-        return res.status(200).json(rows)
+        return res.status(200).json(queryResults[0])
+
+        } catch(err) {
+            return res.status(500).json(err)
+        }
     }
 
     public async insertMainCharacters(req: Request, res: Response) {
-        const { ...data } = req.body;
+        try {
+            const { ...data } = req.body;
         
-        await createMainCharacters(data)
+            await createMainCharacters(data)       
+                     
+            const query = 'SELECT * FROM mainChars'
+            const queryResults = await connection.promise().query(query)
+        
+            return res.status(200).json(queryResults[0])
 
-        return res.status(200).json("tudo ok")
+        } catch(err) {
+            return res.status(500).json(err)
+        }
     }
 
     
