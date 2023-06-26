@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { connection } from "../../../configs/connection";
-import { CreateAnyCreature } from "../../models/creatures/anyCreature";
 import { CreateWeirdCreatures } from "../../models/creatures/Weirdmageddon";
+import { CreateAnyCreature } from "../../models/creatures/anyCreature";
 
-class WeirmagedomController {
-    public async ViewWeirdmageddon(req: Request, res: Response) {
+class CreaturesController {
+    public async ViewCreatures(req: Request, res: Response) {
         try {
-            const query = 'SELECT * FROM WeirdmageddonCreatures'
+            const query = 'SELECT * FROM AnyCreature'
         
             const queryResult = await connection.promise().query(query)
             return res.status(200).json(queryResult[0])
@@ -15,12 +15,15 @@ class WeirmagedomController {
         }
     }
 
-    public async InsertWeirdmageddon(req: Request, res: Response) {
+    public async InsertCreatures(req: Request, res: Response) {
         try {
+            const query = 'SELECT * FROM AnyCreature'
+
             const { ...data } = req.body;
-            await CreateWeirdCreatures(data)
-            
-            const queryResult = await connection.promise().query(`SELECT * FROM WeirdmageddonCreatures`)
+
+            await CreateAnyCreature(data)
+    
+            const queryResult = await connection.promise().query(query)
 
             return res.status(200).json(queryResult[0]);
 
@@ -30,4 +33,4 @@ class WeirmagedomController {
     }
 }
 
-export default new WeirmagedomController
+export default new CreaturesController

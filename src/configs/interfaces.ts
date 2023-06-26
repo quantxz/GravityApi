@@ -94,7 +94,7 @@ interface othersCharsRelativesInterface {
     charactername?:                             queryStrValues
 }
 
-interface WeirdmageddonInterface {
+interface AnyCreatureInterface {
     name?:           queryStrValues,
     first_episode?:  queryStrValues,
     last_episode?:   queryStrValues,
@@ -117,5 +117,5 @@ export {
     BooksInterface, 
     mainRelativesInterface,
     othersCharsRelativesInterface,
-    WeirdmageddonInterface
+    AnyCreatureInterface
 }
