@@ -2,9 +2,9 @@ import mysql from 'mysql2';
 
 const connection = mysql.createConnection({
   database: 'gfapi',
-  user: 'xacat11bdshg6btyzz49',
+  user: 'vonmw8bs3g39njcog1mh',
   host: 'aws.connect.psdb.cloud',
-  password: 'pscale_pw_OqdUcXQS30Fx2amHYhFb8bJQeWH0ujwGYWWRIrLMp62',
+  password: 'pscale_pw_IEHha71PeoePgFQgxlfI3DXVDNYXN4fm31cf6hdMr9x',
   ssl: {
     rejectUnauthorized: true
   },
