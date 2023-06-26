@@ -1,7 +1,7 @@
 import { connection } from "../../../configs/connection";
-import { episodesIinterface } from "../../../configs/interfaces"
+import { episodesInterface } from "../../../configs/interfaces"
 
-export const CreateEpisode = async (data: episodesIinterface) => {
+export const CreateEpisode = async (data: episodesInterface) => {
 
     try {
 

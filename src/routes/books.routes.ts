@@ -1,6 +1,6 @@
 import { Response, Router } from "express";
-import BooksControllers from "../app/controllers/BooksControllers";
-const BooksRoutes: Router = Router()
+import BooksControllers from "../app/controllers/books/BooksControllers";
+const BooksRoutes: Router = Router();
 
 BooksRoutes.get("/books", BooksControllers.ViewBooks); //feito
 

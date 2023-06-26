@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
-import { connection } from "../../configs/connection"
-import { createRecCharacters } from "../models/Chars/InsertRecChars"
+import { connection } from "../../../configs/connection"
+import { createRecCharacters } from "../../models/Chars/InsertRecChars"
 
 class RecCharsController {
     public async ViewRecChars(req: Request, res: Response) {

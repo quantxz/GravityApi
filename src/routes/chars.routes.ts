@@ -1,7 +1,7 @@
 import { Router } from "express";
-import MainCharsControllers from "../app/controllers/MainCharsControllers";
-import RecCharsControllers from "../app/controllers/RecCharsControllers";
-import MinorCharsControllers from "../app/controllers/MinorCharsControllers";
+import MainCharsControllers from "../app/controllers/Chars/MainCharsControllers";
+import RecCharsControllers from "../app/controllers/Chars/RecCharsControllers";
+import MinorCharsControllers from "../app/controllers/Chars/MinorCharsControllers";
 const Charsroutes: Router = Router();
 
 Charsroutes.get("/Characters/Main", MainCharsControllers.viewMainChars);//feito

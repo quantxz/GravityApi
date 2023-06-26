@@ -1,8 +1,8 @@
 import mysql from 'mysql2/promise';
 import { connection } from "../../../configs/connection";
-import { recAndminorsCharsRelativesInterface } from "../../../configs/interfaces";
+import { othersCharsRelativesInterface } from "../../../configs/interfaces";
 
-export const CreateMinorsRelatives = async (data: recAndminorsCharsRelativesInterface) => {
+export const CreateMinorsRelatives = async (data: othersCharsRelativesInterface) => {
   try {
     const query = `
       INSERT INTO minoscharsrelatives 

@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express";
-import EpisodesControlllers from "../app/controllers/EpisodesControlllers";
+import EpisodesControlllers from "../app/controllers/episodes/EpisodesControlllers";
 const EpisodesRoute: Router = Router();
 
 EpisodesRoute.get("/episodes", EpisodesControlllers.ViewEpisode); //feito

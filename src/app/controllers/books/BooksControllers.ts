@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { connection } from "../../configs/connection";
-import { CreateBook } from "../models/Books/InsertBooksModel";
+import { connection } from "../../../configs/connection";
+import { CreateBook } from "../../models/Books/InsertBooksModel";
 
 
 class booksController {

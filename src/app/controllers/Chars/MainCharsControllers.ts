@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { createMainCharacters } from "../models/Chars/InsertMainChars";
-import { connection } from "../../configs/connection";
+import { createMainCharacters } from "../../models/Chars/InsertMainChars";
+import { connection } from "../../../configs/connection";
 
 class mainCharsController {
     public async viewMainChars(req: Request, res: Response) {

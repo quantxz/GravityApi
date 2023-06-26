@@ -234,3 +234,21 @@ model minorsCharsRelatives {
   @@map("minoscharsrelatives")
   @@index([charactername])
 }
+
+model WeirdmageddonCreatures {
+  name                String @id @unique         @default("")
+  first_episode       String? @db.VarChar(1000)  @default("")
+  last_episode        String? @db.VarChar(1000)  @default("")
+  mentions            String? @db.VarChar(1000)  @default("")
+  no_lines            String? @db.VarChar(1000)  @default("")
+  voice               String? @db.VarChar(1000)  @default("")
+  species             String? @db.VarChar(1000)  @default("")
+  abilities           String? @db.VarChar(1000)  @default("")
+  inspiration         String? @db.VarChar(1000)  @default("")
+  fate                String? @db.VarChar(1000)  @default("")
+  quote               String? @db.VarChar(1000)  @default("")
+  description         String? @db.VarChar(1000)  @default("")
+  image               String? @db.VarChar(1000)  @default("")
+
+  @@map("WeirdmageddonCreatures")
+}

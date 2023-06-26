@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { connection } from "../../configs/connection";
-import { createMinorCharacters } from "../models/Chars/InsertMinorChars";
+import { connection } from "../../../configs/connection";
+import { createMinorCharacters } from "../../models/Chars/InsertMinorChars";
 
 class MinorCharsConroller {
     public async ViewMinors(req: Request, res: Response) {

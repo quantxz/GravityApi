@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { CreateEpisode } from "../models/episodes/insertEpisodesModel"
-import { connection } from "../../configs/connection";
+import { CreateEpisode } from "../../models/episodes/insertEpisodesModel"
+import { connection } from "../../../configs/connection";
 
 class episodeController {
     public async ViewEpisode(req: Request, res: Response) {
