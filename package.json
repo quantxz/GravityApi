@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon ./src/server",
-    "add": "yarn add @prisma/client",
-    "vercel-build": "npx prisma db push"
+    "vercel-build": "npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^4.16.1",
