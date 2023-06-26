@@ -2,8 +2,8 @@ import mysql from 'mysql2';
 
 const connection = mysql.createConnection({
   host: 'aws.connect.psdb.cloud',
-  user: '9mmhxqmkpbzwtm772kxi',
-  password: 'pscale_pw_ePVXVg1lrjAANvlTWOKENK7o2usnmh8Yur54Zl07HGI',
+  user: 'qmgxxfqk4gsqb56mb9qu',
+  password: 'pscale_pw_OUVm5zd9D3b5zRtHmrNi6SjAdGkRjcpAc7ZA2YqfsOa',
   database: 'gravityfallapi',
   ssl: {
     rejectUnauthorized: true
