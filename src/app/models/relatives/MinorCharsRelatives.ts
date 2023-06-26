@@ -2,10 +2,10 @@ import mysql from 'mysql2/promise';
 import { connection } from "../../../configs/connection";
 import { recAndminorsCharsRelativesInterface } from "../../../configs/interfaces";
 
-export const CreateRecRelatives = async (data: recAndminorsCharsRelativesInterface) => {
+export const CreateMinorsRelatives = async (data: recAndminorsCharsRelativesInterface) => {
   try {
     const query = `
-      INSERT INTO recurrentscharsrelatives 
+      INSERT INTO minoscharsrelatives 
         (
             parents, 
             sister_or_brother,

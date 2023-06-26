@@ -1,18 +1,20 @@
 import { connection } from "../../../configs/connection";
 import { CharsInterface } from "../../../configs/interfaces";
 
-export const createMainCharacters = async (data: CharsInterface) => {
+export const createMinorCharacters = async (data: CharsInterface) => {
     try {
         const query = `
-        INSERT INTO mainchars 
-        (name, first_episode, last_episode, voice, abilities, age, born, ocuppation, inspiration, likes, dislikes, description, image) 
+        INSERT INTO minorschars 
+        (name, first_episode, last_episode, mentions, no_lines, voice, abilities, age, born, ocuppation, inspiration, likes, dislikes, description, image) 
         VALUES 
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 
         const values = [
             data.name, 
             data.first_episode, 
-            data.last_episode, 
+            data.last_episode,
+            data.mentions,
+            data.no_lines, 
             data.voice, 
             data.abilities,
             data.age, 

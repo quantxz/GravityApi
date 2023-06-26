@@ -3,7 +3,7 @@ import { connection } from "../../../configs/connection";
 import { CreateRecRelatives } from "../../models/relatives/recCharsRelatives";
 
 class RecRelatives {
-    public async ViewRelatives(req: Request, res: Response) {
+    public async ViewRelations(req: Request, res: Response) {
         try {
             const query = 'SELECT * FROM recurrentscharsrelatives'
 

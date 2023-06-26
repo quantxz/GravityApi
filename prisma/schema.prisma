@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url  	= "mysql://2exyj4z9a8z69h7qroxz:pscale_pw_oOq2MExswHe1npD5G2is7dTspnUMUvfEFR6FazzP6Y8@aws.connect.psdb.cloud/gfapi?sslaccept=strict"
+  url  	= env("DATABASE_URL")
   relationMode = "prisma"
 }
 
@@ -93,21 +93,21 @@ model mainCharsRelatives {
 }
 
 model recurrentsChars {
-  name                String @id @unique       @default("")
-  first_episode       String @db.VarChar(1000)  @default("")
-  last_episode        String @db.VarChar(1000)  @default("")
-  mentions            String @db.VarChar(1000)  @default("")
-  no_lines            String @db.VarChar(1000)  @default("")
-  voice               String @db.VarChar(1000)  @default("")
-  abilities           String @db.VarChar(1000)  @default("")
-  age                 String @db.VarChar(1000)  @default("")
-  born                String @db.VarChar(1000)  @default("")
-  ocuppation          String @db.VarChar(1000)  @default("")
-  inspiration         String @db.VarChar(1000)  @default("")
-  likes               String @db.VarChar(1000)  @default("")
-  dislikes            String @db.VarChar(1000)  @default("")
-  description         String @db.VarChar(1000)  @default("")
-  image               String @db.VarChar(1000)  @default("")
+  name                String @id @unique         @default("")
+  first_episode       String? @db.VarChar(1000)  @default("")
+  last_episode        String? @db.VarChar(1000)  @default("")
+  mentions            String? @db.VarChar(1000)  @default("")
+  no_lines            String? @db.VarChar(1000)  @default("")
+  voice               String? @db.VarChar(1000)  @default("")
+  abilities           String? @db.VarChar(1000)  @default("")
+  age                 String? @db.VarChar(1000)  @default("")
+  born                String? @db.VarChar(1000)  @default("")
+  ocuppation          String? @db.VarChar(1000)  @default("")
+  inspiration         String? @db.VarChar(1000)  @default("")
+  likes               String? @db.VarChar(1000)  @default("")
+  dislikes            String? @db.VarChar(1000)  @default("")
+  description         String? @db.VarChar(1000)  @default("")
+  image               String? @db.VarChar(1000)  @default("")
 
   relatives          recurrentsCharsRelatives[]
 
@@ -122,14 +122,14 @@ model recurrentsCharsRelatives {
 
   great_grandfather_or_great_grandmother String? @db.Text @default("")
 
-  granduncle          String? @db.Text @default("")
+  granduncle               String? @db.Text @default("")
   grand_daughters          String? @db.Text @default("")
-  grandson          String? @db.Text @default("")
-  ex_grandaunt_in_law String? @db.Text @default("")
+  grandson                 String? @db.Text @default("")
+  ex_grandaunt_in_law      String? @db.Text @default("")
   
   great_niece_or_great_nephew String? @db.Text @default("")
   nephew_or_niece_in_law      String? @db.Text @default("")
-  great_grandfather      String? @db.Text @default("")  
+  great_grandfather        String? @db.Text @default("")  
   great_great_grandfather  String? @db.Text @default("")
 
   ex_wife             String? @db.Text @default("")
@@ -140,9 +140,9 @@ model recurrentsCharsRelatives {
   maternal_grandfather String? @db.Text @default("") 
   maternal_grandmother String? @db.Text @default("")
 
-  wife                String? @db.Text @default("")
+  wife                   String? @db.Text @default("")
   husband                String? @db.Text @default("")
-  son                 String? @db.Text @default("")
+  son                    String? @db.Text @default("")
   
   mother                   String? @db.Text @default("")
   father                   String? @db.Text @default("")
@@ -164,23 +164,22 @@ model recurrentsCharsRelatives {
   @@index([charactername])
 }
 
-
 model minorsChars {
-  name                String @id @unique       @default("")
-  first_episode       String @db.VarChar(1000)  @default("")
-  last_episode        String @db.VarChar(1000)  @default("")
-  mentions            String @db.VarChar(1000)  @default("")
-  no_lines            String @db.VarChar(1000)  @default("")
-  voice               String @db.VarChar(1000)  @default("")
-  abilities           String @db.VarChar(1000)  @default("")
-  age                 String @db.VarChar(1000)  @default("")
-  born                String @db.VarChar(1000)  @default("")
-  ocuppation          String @db.VarChar(1000)  @default("")
-  inspiration         String @db.VarChar(1000)  @default("")
-  likes               String @db.VarChar(1000)  @default("")
-  dislikes            String @db.VarChar(1000)  @default("")
-  description         String @db.VarChar(1000)  @default("")
-  image               String @db.VarChar(1000)  @default("")
+  name                String @id @unique         @default("")
+  first_episode       String? @db.VarChar(1000)  @default("")
+  last_episode        String? @db.VarChar(1000)  @default("")
+  mentions            String? @db.VarChar(1000)  @default("")
+  no_lines            String? @db.VarChar(1000)  @default("")
+  voice               String? @db.VarChar(1000)  @default("")
+  abilities           String? @db.VarChar(1000)  @default("")
+  age                 String? @db.VarChar(1000)  @default("")
+  born                String? @db.VarChar(1000)  @default("")
+  ocuppation          String? @db.VarChar(1000)  @default("")
+  inspiration         String? @db.VarChar(1000)  @default("")
+  likes               String? @db.VarChar(1000)  @default("")
+  dislikes            String? @db.VarChar(1000)  @default("")
+  description         String? @db.VarChar(1000)  @default("")
+  image               String? @db.VarChar(1000)  @default("")
   relatives           minorsCharsRelatives[]
 
   @@map("minorschars")
@@ -194,15 +193,15 @@ model minorsCharsRelatives {
 
   great_grandfather_or_great_grandmother String? @db.Text @default("")
 
-  granduncle          String? @db.Text @default("")
+  granduncle               String? @db.Text @default("")
   grand_daughters          String? @db.Text @default("")
-  grandson          String? @db.Text @default("")
-  ex_grandaunt_in_law String? @db.Text @default("")
+  grandson                 String? @db.Text @default("")
+  ex_grandaunt_in_law      String? @db.Text @default("")
   
   great_niece_or_great_nephew String? @db.Text @default("")
   nephew_or_niece_in_law      String? @db.Text @default("")
-  great_grandfather      String? @db.Text @default("")  
-  great_great_grandfather  String? @db.Text @default("")
+  great_grandfather           String? @db.Text @default("")  
+  great_great_grandfather     String? @db.Text @default("")
 
   ex_wife             String? @db.Text @default("")
   ancestor            String? @db.Text @default("")
@@ -212,9 +211,9 @@ model minorsCharsRelatives {
   maternal_grandfather String? @db.Text @default("") 
   maternal_grandmother String? @db.Text @default("")
 
-  wife                String? @db.Text @default("")
+  wife                   String? @db.Text @default("")
   husband                String? @db.Text @default("")
-  son                 String? @db.Text @default("")
+  son                    String? @db.Text @default("")
   
   mother                   String? @db.Text @default("")
   father                   String? @db.Text @default("")
@@ -229,7 +228,7 @@ model minorsCharsRelatives {
   
   cousin  String? @db.Text @default("")
 
-  charactername       String
+  charactername        String
   minorChar            minorsChars @relation(fields: [charactername], references: [name])
 
   @@map("minoscharsrelatives")

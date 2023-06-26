@@ -10,11 +10,14 @@ interface episodesIinterface {
     written_by: queryStrValues
 }
 
-interface mainAndRecCharsInterface {
+interface CharsInterface {
     name: queryStrValues,
     first_episode: queryStrValues,
     last_episode: queryStrValues,
+    mentions?: queryStrValues,
+    no_lines?: queryStrValues,
     voice: queryStrValues,
+    abilities?: queryStrValues,
     age: queryStrValues,
     born: queryStrValues,
     ocuppation: queryStrValues,
@@ -60,7 +63,7 @@ interface mainCharsRelativesInterface {
 
 }
 
-interface recCharsRelativesInterface {
+interface recAndminorsCharsRelativesInterface {
     parents?: queryStrValues,
     sister_or_brother?: queryStrValues,
     grandfather?: queryStrValues,
@@ -96,8 +99,8 @@ interface recCharsRelativesInterface {
 
 export { 
     episodesIinterface,
-    mainAndRecCharsInterface,
+    CharsInterface,
     BooksInterface, 
     mainCharsRelativesInterface,
-    recCharsRelativesInterface 
+    recAndminorsCharsRelativesInterface 
 }

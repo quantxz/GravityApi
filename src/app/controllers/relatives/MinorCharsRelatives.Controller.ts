@@ -1,13 +1,14 @@
 import { Request, Response } from "express";
 import { connection } from "../../../configs/connection";
 import { CreateRelatives } from "../../models/relatives/MainCharsRealatives";
+import { CreateMinorsRelatives } from "../../models/relatives/MinorCharsRelatives";
 
 
-class MainRealativesController {
+class MinorsRealativesController {
 
     public async ViewRelations(req: Request, res: Response) {
         try {
-            const query = 'SELECT * FROM maincharsrelatives';
+            const query = 'SELECT * FROM minoscharsrelatives';
 
             const queryResults = await connection.promise().query(query);
 
@@ -23,9 +24,9 @@ class MainRealativesController {
         try {
             const { ...data } = req.body;
 
-            await CreateRelatives(data)
+            await CreateMinorsRelatives(data)
 
-            const query = 'SELECT * FROM maincharsrelatives';
+            const query = 'SELECT * FROM minoscharsrelatives';
             const queryResults = await connection.promise().query(query);
 
             return res.status(200).json(queryResults[0]);
@@ -37,4 +38,4 @@ class MainRealativesController {
     }
 }
 
-export default new MainRealativesController
+export default new MinorsRealativesController

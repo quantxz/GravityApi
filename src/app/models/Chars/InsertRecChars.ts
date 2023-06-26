@@ -1,19 +1,22 @@
 import { connection } from "../../../configs/connection";
-import { mainAndRecCharsInterface } from "../../../configs/interfaces";
+import { CharsInterface } from "../../../configs/interfaces";
 
-export const createRecCharacters = async (data: mainAndRecCharsInterface) => {
+export const createRecCharacters = async (data: CharsInterface) => {
     try {
         const query = `
         INSERT INTO recurrentschars 
-        (name, first_episode, last_episode, voice, age, born, ocuppation, inspiration, likes, dislikes, description, image) 
+        (name, first_episode, last_episode, mentions, no_lines, voice, abilities, age, born, ocuppation, inspiration, likes, dislikes, description, image) 
         VALUES 
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 
         const values = [
             data.name, 
             data.first_episode, 
-            data.last_episode, 
+            data.last_episode,
+            data.mentions,
+            data.no_lines, 
             data.voice, 
+            data.abilities,
             data.age, 
             data.born, 
             data.ocuppation, 
