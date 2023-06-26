@@ -32,8 +32,8 @@ routes.get("/Relatives/MainChars", MainCharsRealatives.viewMainRealatives) //fei
 
 routes.post("/Relatives/MainChars", MainCharsRealatives.insertMainCharsRealatives); //feito
 
-routes.get("/Relatives/RecChars", RecCharsRelativesController.ViewRelatives)
+routes.get("/Relatives/RecChars", RecCharsRelativesController.ViewRelatives) //feito
 
-routes.post("/Relatives/RecChars", RecCharsRelativesController.InsertRelations)
+routes.post("/Relatives/RecChars", RecCharsRelativesController.InsertRelations) //feito
 
 export default routes;

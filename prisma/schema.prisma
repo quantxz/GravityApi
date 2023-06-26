@@ -48,6 +48,7 @@ model mainChars {
   first_episode       String @db.VarChar(1000)  @default("")
   last_episode        String @db.VarChar(1000)  @default("")
   voice               String @db.VarChar(1000)  @default("")
+  abilities           String @db.VarChar(1000)  @default("")
   age                 String @db.VarChar(1000)  @default("")
   born                String @db.VarChar(1000)  @default("")
   ocuppation          String @db.VarChar(1000)  @default("")
@@ -95,7 +96,10 @@ model recurrentsChars {
   name                String @id @unique       @default("")
   first_episode       String @db.VarChar(1000)  @default("")
   last_episode        String @db.VarChar(1000)  @default("")
+  mentions            String @db.VarChar(1000)  @default("")
+  no_lines            String @db.VarChar(1000)  @default("")
   voice               String @db.VarChar(1000)  @default("")
+  abilities           String @db.VarChar(1000)  @default("")
   age                 String @db.VarChar(1000)  @default("")
   born                String @db.VarChar(1000)  @default("")
   ocuppation          String @db.VarChar(1000)  @default("")
@@ -157,5 +161,77 @@ model recurrentsCharsRelatives {
   mainChar            recurrentsChars @relation(fields: [charactername], references: [name])
 
   @@map("recurrentscharsrelatives")
+  @@index([charactername])
+}
+
+
+model minorsChars {
+  name                String @id @unique       @default("")
+  first_episode       String @db.VarChar(1000)  @default("")
+  last_episode        String @db.VarChar(1000)  @default("")
+  mentions            String @db.VarChar(1000)  @default("")
+  no_lines            String @db.VarChar(1000)  @default("")
+  voice               String @db.VarChar(1000)  @default("")
+  abilities           String @db.VarChar(1000)  @default("")
+  age                 String @db.VarChar(1000)  @default("")
+  born                String @db.VarChar(1000)  @default("")
+  ocuppation          String @db.VarChar(1000)  @default("")
+  inspiration         String @db.VarChar(1000)  @default("")
+  likes               String @db.VarChar(1000)  @default("")
+  dislikes            String @db.VarChar(1000)  @default("")
+  description         String @db.VarChar(1000)  @default("")
+  image               String @db.VarChar(1000)  @default("")
+  relatives           minorsCharsRelatives[]
+
+  @@map("minorschars")
+}
+
+model minorsCharsRelatives {
+  id                  Int     @id @unique @default(autoincrement()) 
+  parents             String? @db.Text     @default("")
+  sister_or_brother   String? @db.Text     @default("")
+  grandfather         String? @db.Text     @default("")
+
+  great_grandfather_or_great_grandmother String? @db.Text @default("")
+
+  granduncle          String? @db.Text @default("")
+  grand_daughters          String? @db.Text @default("")
+  grandson          String? @db.Text @default("")
+  ex_grandaunt_in_law String? @db.Text @default("")
+  
+  great_niece_or_great_nephew String? @db.Text @default("")
+  nephew_or_niece_in_law      String? @db.Text @default("")
+  great_grandfather      String? @db.Text @default("")  
+  great_great_grandfather  String? @db.Text @default("")
+
+  ex_wife             String? @db.Text @default("")
+  ancestor            String? @db.Text @default("")
+
+  maternal_cousin     String? @db.Text @default("")
+  
+  maternal_grandfather String? @db.Text @default("") 
+  maternal_grandmother String? @db.Text @default("")
+
+  wife                String? @db.Text @default("")
+  husband                String? @db.Text @default("")
+  son                 String? @db.Text @default("")
+  
+  mother                   String? @db.Text @default("")
+  father                   String? @db.Text @default("")
+  daughter                 String? @db.Text @default("")
+  Unnamed_niece_or_nephew  String? @db.Text @default("")
+  
+  father_in_law             String? @db.Text @default("")
+  great_grandfather_in_law  String? @db.Text @default("")
+  
+  ancestor_in_law  String? @db.Text @default("")
+  unknow  String? @db.Text @default("")
+  
+  cousin  String? @db.Text @default("")
+
+  charactername       String
+  minorChar            minorsChars @relation(fields: [charactername], references: [name])
+
+  @@map("minoscharsrelatives")
   @@index([charactername])
 }
