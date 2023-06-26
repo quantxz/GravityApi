@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon ./src/server",
-    "postinstall": "prisma generate"
+    "vercel-build": "npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^4.16.1",
