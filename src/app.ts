@@ -5,6 +5,7 @@ import RelativesRoutes from './routes/relatives.routes';
 import BooksRoutes from './routes/books.routes';
 import WeirdmageddonRoutes from './routes/Weirdmageddon.routes';
 import CreaturesRoutes from './routes/creatures.routes';
+import routes from './routes/main.routes';
 
 class App {
     public server: express.Application;
@@ -20,7 +21,7 @@ class App {
     }
 
     private routes() {
-        this.server.use()
+        this.server.use(routes)
         this.server.use(EpisodesRoute)
         this.server.use(Charsroutes)
         this.server.use(RelativesRoutes)
