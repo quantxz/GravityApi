@@ -251,7 +251,7 @@ model WeirdmageddonCreatures {
   description         String? @db.VarChar(1000)  @default("")
   image               String? @db.VarChar(1000)  @default("")
 
-  @@map("WeirdmageddonCreatures")
+  @@map("weirdmageddoncreatures")
 }
 
 model AnyCreature {
@@ -269,5 +269,5 @@ model AnyCreature {
   description         String? @db.VarChar(1000)  @default("")
   image               String? @db.VarChar(1000)  @default("")
 
-  @@map("AnyCreature")
+  @@map("anycreature")
 }

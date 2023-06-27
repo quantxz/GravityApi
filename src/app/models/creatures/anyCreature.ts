@@ -4,7 +4,7 @@ import { AnyCreatureInterface } from "../../../configs/interfaces";
 export const CreateAnyCreature = async (data: AnyCreatureInterface) => {
     try {
         const query = sql`
-            INSERT INTO AnyCreature 
+            INSERT INTO anycreature 
             (name, first_episode, last_episode, mentions, no_lines, voice, species,
             abilities, inspiration, fate, quote, description, image) 
             VALUES 

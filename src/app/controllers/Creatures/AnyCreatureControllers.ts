@@ -5,7 +5,7 @@ import { CreateAnyCreature } from "../../models/creatures/anyCreature";
 class CreaturesController {
     public async ViewCreatures(req: Request, res: Response) {
         try {
-            const query = 'SELECT * FROM AnyCreature';
+            const query = 'SELECT * FROM anycreature';
             const { rows } = await sql.query(query);
             
             return res.status(200).json(rows);
@@ -17,7 +17,7 @@ class CreaturesController {
 
     public async InsertCreatures(req: Request, res: Response) {
         try {
-            const query = 'SELECT * FROM AnyCreature';
+            const query = 'SELECT * FROM anycreature';
 
             const data = req.body;
 
