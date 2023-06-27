@@ -1,13 +1,5 @@
 import mysql from 'mysql2';
 
-const connection = mysql.createConnection({
-  database: 'gfapi',
-  user: 'ay547om749y2oqs4e3dw',
-  host: 'aws.connect.psdb.cloud',
-  password: 'pscale_pw_5IEq8JAZ1CUaTw41BA5bQhWivFv4tZq7aINVoxkI4e',
-  ssl: {
-    rejectUnauthorized: false
-  },
-});
+const connection = mysql.createConnection('mysql://c1iaput886k7mns71a0q:pscale_pw_rTwHlxErYTDkU5Ah9JCcPC5EPsyWqGglEWcU2Qlxbi2@aws.connect.psdb.cloud/gfapi?ssl={"rejectUnauthorized":true}')
 
 export { connection };
