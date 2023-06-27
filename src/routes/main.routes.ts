@@ -1,14 +1,14 @@
-import { Response, Router } from "express";
+import { Request, Response, Router } from "express";
 import { sql } from "@vercel/postgres";
 
 const routes: Router = Router();
 
-routes.get("/", async (res: Response) => {
+routes.get("/", async (req: Request, res: Response) => {
     try {
         const query = 'SELECT * FROM episodes';
         const { rows } = await sql.query(query);
         
-        return res.status(200).json(rows);
+        return res.status(500).json(rows)
 
     } catch (err) {
         console.error('Error while executing query:', err);
