@@ -1,37 +1,36 @@
 import { Request, Response } from "express";
-import { connection } from "../../../configs/connection";
+import { sql } from "@vercel/postgres";
 import { CreateRecRelatives } from "../../models/relatives/recCharsRelatives";
 
-class RecRelatives {
+class RecRelativesController {
     public async ViewRelations(req: Request, res: Response) {
         try {
-            const query = 'SELECT * FROM recurrentscharsrelatives'
+            const query = 'SELECT * FROM recurrentscharsrelatives';
+            const { rows } = await sql.query(query);
+            
+            return res.status(200).json(rows);
 
-            const queryResult = await connection.promise().query(query)
-
-            return res.status(200).json(queryResult[0])
-
-        } catch(err) {
-            return res.status(500).json(err)
+        } catch (err) {
+            console.error('Error while executing query:', err);
+            return res.status(500).json(err);
         }
     }
 
     public async InsertRelations(req: Request, res: Response) {
         try {
-            const { ...data } = req.body;
+            const data = req.body;
+            const query = 'SELECT * FROM recurrentscharsrelatives';
 
-            const query = 'SELECT * FROM recurrentscharsrelatives'
+            await CreateRecRelatives(data);
 
-            await CreateRecRelatives(data)
+            const { rows } = await sql.query(query);
 
-            const queryResult = await connection.promise().query(query)
-
-            return res.status(200).json(queryResult[0])
+            return res.status(200).json(rows);
 
         } catch(err) {
-            return res.status(500).json(err)
+            return res.status(500).json(err);
         }
     }
 }
 
-export default new RecRelatives
+export default new RecRelativesController();

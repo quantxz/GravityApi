@@ -1,39 +1,34 @@
 import { Request, Response } from "express";
-import { connection } from "../../../configs/connection";
+import { sql } from "@vercel/postgres";
 import { CreateBook } from "../../models/Books/InsertBooksModel";
 
 
-class booksController {
-    public async ViewBooks(req: Request, res: Response) {
-        try {
-            const query = 'SELECT * FROM books'
+class BooksController {
+  public async ViewBooks(req: Request, res: Response) {
+    try {
+      const query = "SELECT * FROM books";
+      const { rows } = await sql.query(query);
+      
+      return res.status(200).json(rows);
 
-            const queryResult = await connection.promise().query(query)
-    
-            return res.status(200).json(queryResult[0])
-
-        } catch(err) {
-            return res.status(500).json(err)
-        }
+    } catch(err) {
+      return res.status(500).json(err);
     }
+  }
 
-    public async InsertBook(req: Request, res: Response) {
-        try {
-            const { ...data } = req.body;
-            const query = 'SELECT * FROM books'
+  public async InsertBook(req: Request, res: Response) {
+    try {
+      const data = req.body;
 
-            await CreateBook(data)
+      await CreateBook(data);
 
-            const queryResult = await connection.promise().query(query)
-            
-            return res.status(200).json(queryResult[0])
-    
-
-        } catch(err) {
-            return res.status(500).json(err)
-        }
-
+      const query = "SELECT * FROM books";
+      const { rows } = await sql.query(query);
+      return res.status(200).json(rows);
+    } catch(err) {
+      return res.status(500).json(err);
     }
+  }
 }
 
-export default new booksController
+export default new BooksController();

@@ -1,12 +1,20 @@
 import { Response, Router } from "express";
-import BooksControllers from "../app/controllers/books/BooksControllers";
-import { connection } from "../configs/connection";
+import { sql } from "@vercel/postgres";
+
 const routes: Router = Router();
 
 routes.get("/", async (res: Response) => {
-    const queryResult = await connection.promise().query('SELECT * FROM episodes') 
-    return res.status(200).json(queryResult[0])
-    
-}); 
+    try {
+        const query = 'SELECT * FROM episodes';
+        const { rows } = await sql.query(query);
+        
+        return res.status(200).json(rows);
+
+    } catch (err) {
+        console.error('Error while executing query:', err);
+        return res.status(500).json(err);
+    }
+});
 
 export default routes;
+

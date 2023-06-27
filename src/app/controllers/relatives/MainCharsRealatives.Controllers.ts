@@ -1,17 +1,14 @@
 import { Request, Response } from "express";
-import { connection } from "../../../configs/connection";
+import { sql } from "@vercel/postgres";
 import { CreateRelatives } from "../../models/relatives/MainCharsRealatives";
 
-
-class MainRealativesController {
-
+class MainRelativesController {
     public async ViewRelations(req: Request, res: Response) {
         try {
             const query = 'SELECT * FROM maincharsrelatives';
+            const { rows } = await sql.query(query);
 
-            const queryResults = await connection.promise().query(query);
-
-            return res.status(200).json(queryResults[0]);
+            return res.status(200).json(rows);
 
         } catch (err) {
             console.error('Error while executing query:', err);
@@ -21,20 +18,19 @@ class MainRealativesController {
 
     public async InsertRelations(req: Request, res: Response) {
         try {
-            const { ...data } = req.body;
-
-            await CreateRelatives(data)
-
+            const data = req.body;
             const query = 'SELECT * FROM maincharsrelatives';
-            const queryResults = await connection.promise().query(query);
+            
+            await CreateRelatives(data);
 
-            return res.status(200).json(queryResults[0]);
+            const { rows } = await sql.query(query);
+
+            return res.status(200).json(rows);
 
         } catch(err) {
-            return res.status(500).json(err)
+            return res.status(500).json(err);
         }
-
     }
 }
 
-export default new MainRealativesController
+export default new MainRelativesController();

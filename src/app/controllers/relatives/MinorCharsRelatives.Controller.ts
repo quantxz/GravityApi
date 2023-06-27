@@ -1,18 +1,15 @@
 import { Request, Response } from "express";
-import { connection } from "../../../configs/connection";
+import { sql } from "@vercel/postgres";
 import { CreateRelatives } from "../../models/relatives/MainCharsRealatives";
 import { CreateMinorsRelatives } from "../../models/relatives/MinorCharsRelatives";
 
-
-class MinorsRealativesController {
-
+class MinorsRelativesController {
     public async ViewRelations(req: Request, res: Response) {
         try {
             const query = 'SELECT * FROM minoscharsrelatives';
-
-            const queryResults = await connection.promise().query(query);
-
-            return res.status(200).json(queryResults[0]);
+            const { rows } = await sql.query(query);
+            
+            return res.status(200).json(rows);
 
         } catch (err) {
             console.error('Error while executing query:', err);
@@ -22,20 +19,18 @@ class MinorsRealativesController {
 
     public async InsertRelations(req: Request, res: Response) {
         try {
-            const { ...data } = req.body;
-
-            await CreateMinorsRelatives(data)
-
+            const data = req.body;
             const query = 'SELECT * FROM minoscharsrelatives';
-            const queryResults = await connection.promise().query(query);
 
-            return res.status(200).json(queryResults[0]);
+            await CreateMinorsRelatives(data);
+            
+            const { rows } = await sql.query(query);
+            return res.status(200).json(rows);
 
         } catch(err) {
-            return res.status(500).json(err)
+            return res.status(500).json(err);
         }
-
     }
 }
 
-export default new MinorsRealativesController
+export default new MinorsRelativesController();
