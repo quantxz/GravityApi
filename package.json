@@ -24,7 +24,8 @@
     "nodemon": "^2.0.22",
     "pg": "^8.11.0",
     "sucrase": "^3.32.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
