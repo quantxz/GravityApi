@@ -17,7 +17,7 @@ class MinorCharsController {
 
     public async InsertMinors(req: Request, res: Response) {
         try {
-            const data = req.body;
+            const { ...data } = req.body;
 
             await createMinorCharacters(data);
 

@@ -17,7 +17,7 @@ class MainCharsController {
 
   public async insertMainCharacters(req: Request, res: Response) {
     try {
-      const data = req.body;
+      const { ...data } = req.body;
 
       await createMainCharacters(data);
 

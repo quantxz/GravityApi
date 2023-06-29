@@ -18,7 +18,7 @@ class RecRelativesController {
 
     public async InsertRelations(req: Request, res: Response) {
         try {
-            const data = req.body;
+            const { ...data } = req.body;
             const query = 'SELECT * FROM recurrentscharsrelatives';
 
             await CreateRecRelatives(data);

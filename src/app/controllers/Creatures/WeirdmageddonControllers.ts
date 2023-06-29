@@ -15,7 +15,7 @@ class WeirmagedomController {
 
     public async InsertWeirdmageddon(req: Request, res: Response) {
         try {
-            const data = req.body;
+            const { ...data } = req.body;
             await CreateWeirdCreatures(data);
             
             const query = 'SELECT * FROM weirdmageddoncreatures';

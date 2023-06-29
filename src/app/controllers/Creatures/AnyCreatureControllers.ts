@@ -19,7 +19,7 @@ class CreaturesController {
         try {
             const query = 'SELECT * FROM anycreature';
 
-            const data = req.body;
+            const { ...data } = req.body;
 
             await CreateAnyCreature(data);
 

@@ -18,7 +18,7 @@ class MainRelativesController {
 
     public async InsertRelations(req: Request, res: Response) {
         try {
-            const data = req.body;
+            const { ...data } = req.body;
             const query = 'SELECT * FROM maincharsrelatives';
             
             await CreateRelatives(data);

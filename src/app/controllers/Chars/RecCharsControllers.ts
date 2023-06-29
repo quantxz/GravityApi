@@ -17,7 +17,7 @@ class RecCharsController {
 
     public async InsertRecChars(req: Request, res: Response) {
         try {
-            const data = req.body;
+            const { ...data } = req.body;
 
             await createRecCharacters(data);
 

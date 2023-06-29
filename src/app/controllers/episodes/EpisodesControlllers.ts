@@ -17,7 +17,7 @@ class EpisodeController {
     
     public async insertEpisode(req: Request, res: Response) {
         try {
-            const data = req.body;
+            const { ...data } = req.body;
             await CreateEpisode(data);
     
             const query = 'SELECT * FROM episodes';
