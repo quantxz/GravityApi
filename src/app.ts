@@ -6,6 +6,7 @@ import BooksRoutes from './routes/books.routes';
 import WeirdmageddonRoutes from './routes/Weirdmageddon.routes';
 import CreaturesRoutes from './routes/creatures.routes';
 import routes from './routes/main.routes';
+import cors from 'cors'
 
 class App {
     public server: express.Application;
@@ -18,6 +19,7 @@ class App {
 
     private middleware() {
         this.server.use(express.json())
+        this.server.use(cors())
     }
 
     private routes() {
