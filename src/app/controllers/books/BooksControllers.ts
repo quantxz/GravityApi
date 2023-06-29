@@ -18,13 +18,15 @@ class BooksController {
 
   public async InsertBook(req: Request, res: Response) {
     try {
-      const data = req.body;
+      const { ...data } = req.body;
 
       await CreateBook(data);
 
       const query = "SELECT * FROM books";
+
       const { rows } = await sql.query(query);
       return res.status(200).json(rows);
+
     } catch(err) {
       return res.status(500).json(err);
     }
