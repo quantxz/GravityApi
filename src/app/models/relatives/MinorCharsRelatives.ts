@@ -27,7 +27,7 @@ export const CreateMinorsRelatives = async (data: othersCharsRelativesInterface)
             mother,
             father,
             daughter,
-            Unnamed_niece_or_nephew,
+            "Unnamed_niece_or_nephew",
             father_in_law,
             great_grandfather_in_law,
             ancestor_in_law,
