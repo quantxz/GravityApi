@@ -5,7 +5,7 @@ export const CreateBook = async (data: BooksInterface) => {
     try {
         const query = sql`
         INSERT INTO books 
-        (title, titleBr, format, formatBr, mainGenre, mainGenreBr, pages, published, publishedBr, rating, ratingBr, author, image) 
+        (title, "titleBr", format, "formatBr", "mainGenre", "mainGenreBr", pages, published, "publishedBr", rating, "ratingBr", author, image) 
         VALUES 
         (${data.title}, ${data.titleBr}, ${data.format}, ${data.formatBr}, ${data.mainGenre}, ${data.mainGenreBr}, ${data.pages}, ${data.published}, ${data.publishedBr}, ${data.rating}, ${data.ratingBr}, ${data.author}, ${data.image})
         `;
