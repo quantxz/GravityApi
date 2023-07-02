@@ -55,7 +55,7 @@ class BooksController {
       try {
         const { name } = req.params;
 
-        const query = "SELECT * FROM books WHERE name LIKE $1"
+        const query = "SELECT * FROM books WHERE title LIKE $1"
   
         const values = [name]
   

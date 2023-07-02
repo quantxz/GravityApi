@@ -53,7 +53,7 @@ class EpisodeController {
         try {
             const { name } = req.params;
 
-            const query = "SELECT * FROM episodes WHERE name LIKE $1"
+            const query = "SELECT * FROM episodes WHERE title LIKE $1"
       
             const values = [name]
       
