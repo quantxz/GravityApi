@@ -34,7 +34,7 @@ class BooksController {
 
   public async ViewSpecifyBook(req: Request, res: Response) {    
       try {
-      const id = req.params;
+      const { id } = req.params;
 
       const query = "SELECT * FROM books WHERE id = $1";
       const values = [id];
