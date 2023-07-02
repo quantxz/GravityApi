@@ -6,6 +6,6 @@ import swaggerDocs from '../configs/swagger.json'
 const routes: Router = Router();
 
 routes.get("/", SwaggerUi.serve, SwaggerUi.setup(swaggerDocs));
-
+ 
 export default routes;
 
