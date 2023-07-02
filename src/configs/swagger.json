@@ -8,6 +8,7 @@
         },
         "version": "1.0.0"
     },
+    "style": "default",
     "servers": [
         {
             "url": "https://gf-db-transfer.vercel.app/episodes",
