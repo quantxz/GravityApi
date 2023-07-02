@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { sql } from "@vercel/postgres";
+import { QueryResult, sql } from "@vercel/postgres";
 import { createMinorCharacters } from "../../models/Chars/InsertMinorChars";
 
 class MinorCharsController {
@@ -24,6 +24,26 @@ class MinorCharsController {
             const query = 'SELECT * FROM minorschars';
             const { rows } = await sql.query(query);
             return res.status(200).json(rows);
+        } catch (err) {
+            return res.status(500).json(err);
+        }
+    } 
+
+    public async ViewSpecifyChar(req: Request, res: Response) {
+        try {
+            const { name } = req.params;
+
+            const query = "SELECT * FROM minorschars WHERE name LIKE $1"
+      
+            const values = [name]
+      
+            sql.query(query, values, (err: Error, result: QueryResult<any>) => {
+              if (err) {
+                return res.status(500).json(err);
+              }
+              return res.status(200).json(result.rows);
+            });
+            
         } catch (err) {
             return res.status(500).json(err);
         }

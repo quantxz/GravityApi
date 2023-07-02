@@ -4,8 +4,10 @@ const BooksRoutes: Router = Router();
 
 BooksRoutes.get("/books", BooksControllers.ViewBooks); //feito
 
-BooksRoutes.post("/books", BooksControllers.InsertBook); //feito
+BooksRoutes.get("/books/:id", BooksControllers.ViewSpecifyBookById); //feito
 
-BooksRoutes.get("/books/:id", BooksControllers.ViewSpecifyBook); //feito
+BooksRoutes.get("/books/:name", BooksControllers.ViewSpecifyBookByName); //feito
+
+BooksRoutes.post("/books", BooksControllers.InsertBook); //feito
 
 export default BooksRoutes;
