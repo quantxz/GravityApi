@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { sql } from "@vercel/postgres";
+import { QueryResult, sql } from "@vercel/postgres";
 import { CreateBook } from "../../models/Books/InsertBooksModel";
 
 
@@ -31,6 +31,27 @@ class BooksController {
       return res.status(500).json(err);
     }
   }
+
+  public async ViewSpecifyBook(req: Request, res: Response) {    
+      try {
+      const id = req.params;
+
+      const query = "SELECT * FROM books WHERE id = $1";
+      const values = [id];
+      
+      sql.query(query, values, (err: Error, result: QueryResult<any>) => {
+        if (err) {
+          return res.status(500).json(err);
+        }
+        return res.status(200).json(result.rows);
+      });
+
+    } catch(err) {
+      return res.status(500).json(err);
+    }
+}
+
+
 }
 
 export default new BooksController();

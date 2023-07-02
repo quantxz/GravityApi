@@ -58,7 +58,6 @@ model mainChars {
   dislikes            String @db.VarChar(1000)  @default("")
   description         String @db.VarChar(1000)  @default("")
   image               String @db.VarChar(1000)  @default("")
-
   relatives           mainCharsRelatives[]
 
   @@map("mainchars")
@@ -250,6 +249,7 @@ model WeirdmageddonCreatures {
   quote               String? @db.VarChar(1000)  @default("")
   description         String? @db.VarChar(1000)  @default("")
   image               String? @db.VarChar(1000)  @default("")
+
 
   @@map("weirdmageddoncreatures")
 }

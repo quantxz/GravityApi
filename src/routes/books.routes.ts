@@ -6,4 +6,6 @@ BooksRoutes.get("/books", BooksControllers.ViewBooks); //feito
 
 BooksRoutes.post("/books", BooksControllers.InsertBook); //feito
 
+BooksRoutes.get("/books/:id", BooksControllers.ViewSpecifyBook); //feito
+
 export default BooksRoutes;
