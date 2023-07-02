@@ -43,17 +43,8 @@ const swaggerOptions = {
     .swagger-ui .expand-operation:hover{opacity:.6}`,
 };
 
-const ui = SwaggerUIBundle({
-  url: "https://petstore.swagger.io/v2/swagger.json",
-  dom_id: "#swagger-ui",
-  deepLinking: true,
-  presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
-  plugins: [SwaggerUIBundle.plugins.DownloadUrl],
-  layout: "StandaloneLayout",
-  ...swaggerOptions,
-});
 
 routes.use('/', SwaggerUi.serve);
-routes.get('/', SwaggerUi.setup(swaggerDocs, swaggerOptions, ui));
+routes.get('/', SwaggerUi.setup(swaggerDocs, swaggerOptions));
 
 export default routes;
