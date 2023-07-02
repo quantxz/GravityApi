@@ -29,7 +29,7 @@ class MainCharsController {
     }
   }
 
-  public async ViewSpecifyBook(req: Request, res: Response) {
+  public async ViewSpecifyChar(req: Request, res: Response) {
     try {
       const { name } = req.params;
       const encodedParamValue = encodeURIComponent(name);
@@ -37,7 +37,7 @@ class MainCharsController {
       const query = 'SELECT * FROM mainchars WHERE name = $1'
 
       const values = [encodedParamValue]
-      
+
       sql.query(query, values, (err: Error, result: QueryResult<any>) => {
         if (err) {
           return res.status(500).json(err);
