@@ -27,6 +27,7 @@
     "pg": "^8.11.0",
     "sucrase": "^3.32.0",
     "supertest": "^6.3.3",
+    "swagger-ui-dist": "^5.1.0",
     "swagger-ui-express": "^4.6.3",
     "ts-node": "^10.9.1"
   },
