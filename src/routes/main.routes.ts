@@ -5,12 +5,15 @@ import swaggerDocs from '../configs/swagger.json'
 
 const routes: Router = Router();
 
-var options = {
-    customCss: '.swagger-ui .topbar { display: block }'
-};
+const swaggerOptions = {
+    swaggerOptions: {
+      // Defina as opções do Swagger UI, incluindo o tema de estilo pré-definido
+      theme: 'some-predefined-theme', // Substitua "some-predefined-theme" pelo nome do tema desejado
+    },
+  };
 
 routes.use('/', SwaggerUi.serve);
-routes.get('/', SwaggerUi.setup(swaggerDocs, options));
+routes.get('/', SwaggerUi.setup(swaggerDocs, swaggerOptions));
 
 export default routes;
 
