@@ -2,13 +2,12 @@ import { Router } from "express";
 import SwaggerUi from "swagger-ui-express";
 import { SwaggerOptions } from "swagger-ui-express";
 import swaggerDocs from '../configs/swagger.json';
-import "swagger-ui-dist";
-; // Substitua pelo caminho correto para o arquivo CSS
+import path from "path";
 
 const routes: Router = Router();
 
 const SwaggerOptions = {
-  customCss: "../configs/swagger.css"
+  customCss: path.join(__dirname + "src/configs/swagger.css")
 };
 
 routes.use('/', SwaggerUi.serve);
