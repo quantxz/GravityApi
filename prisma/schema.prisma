@@ -219,7 +219,7 @@ model minorsCharsRelatives {
   mother                   String? @db.Text @default("")
   father                   String? @db.Text @default("")
   daughter                 String? @db.Text @default("")
-  Unnamed_niece_or_nephew  String? @db.Text @default("")
+  unnamed_niece_or_nephew  String? @db.Text @default("")
   
   father_in_law             String? @db.Text @default("")
   great_grandfather_in_law  String? @db.Text @default("")
