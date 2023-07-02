@@ -8,6 +8,8 @@ Charsroutes.get("/Characters/Main", MainCharsControllers.viewMainChars);//feito
 
 Charsroutes.post("/Characters/Main", MainCharsControllers.insertMainCharacters);//feito
 
+Charsroutes.get("/Characters/Main/:name", MainCharsControllers.ViewSpecifyBook);//feito
+
 
 Charsroutes.get("/Characters/Rec", RecCharsControllers.ViewRecChars) //feito
 
