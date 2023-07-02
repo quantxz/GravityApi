@@ -33,7 +33,7 @@ class MainCharsController {
     try {
       const { name } = req.params;
 
-      const query = "SELECT * FROM mainchars WHERE name LIKE '$1'"
+      const query = "SELECT * FROM mainchars WHERE name LIKE $1"
 
       const values = [name]
 
