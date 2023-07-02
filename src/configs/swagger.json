@@ -1,3 +1,11 @@
 {
-    
+    "openapi": "3.0.0",
+    "info": {
+        "title": "GfApi",
+        "description": "essa é uma Api de Gravity falls no estilo PokeAPI",
+        "contact": {
+            "email": "anderson.backdev@gmail.com"
+        },
+        "version": "1.0.0"
+    }
 }
