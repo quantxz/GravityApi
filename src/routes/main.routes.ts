@@ -6,7 +6,7 @@ import swaggerDocs from '../configs/swagger.json'
 const routes: Router = Router();
 
 var options = {
-    explorer: true
+    customCss: '.swagger-ui .topbar { display: block }'
 };
 
 routes.use('/', SwaggerUi.serve);
