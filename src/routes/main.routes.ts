@@ -8,7 +8,7 @@ import "swagger-ui-dist";
 const routes: Router = Router();
 
 const SwaggerOptions = {
-  customCss: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.0.0/swagger-ui.css"
+  customCss: "../configs/swagger.css"
 };
 
 routes.use('/', SwaggerUi.serve);
