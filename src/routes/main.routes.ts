@@ -9,7 +9,7 @@ const routes: Router = Router();
 
 const SwaggerOptions = {
     swaggerOptions: {
-      theme: 'default', 
+      theme: 'feeling-blue', 
     },
 };
 
