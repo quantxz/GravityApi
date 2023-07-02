@@ -8,7 +8,6 @@
         },
         "version": "1.0.0"
     },
-    "style": "default",
     "servers": [
         {
             "url": "https://gf-db-transfer.vercel.app/episodes",
@@ -19,7 +18,7 @@
             "description": "esta rota retorna um episodio especifico com base em um id"
         },
         {
-            "url": "https://gf-db-transfer.vercel.app/episodes/id/(numero do id)",
+            "url": "https://gf-db-transfer.vercel.app/episodes/name/(nome do episodio)",
             "description": "esta rota retorna um episodio especifico com base no nome do episodio"
         }
     ]
