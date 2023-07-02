@@ -33,7 +33,7 @@ class EpisodeController {
         try {
             const { id } = req.params
 
-            const query = "SELECT * FROM books WHERE id = $1"
+            const query = "SELECT * FROM episodes WHERE id = $1"
   
             const values = [id]
     
