@@ -32,11 +32,10 @@ class MainCharsController {
   public async ViewSpecifyChar(req: Request, res: Response) {
     try {
       const { name } = req.params;
-      const encodedParamValue = encodeURIComponent(name);
 
-      const query = 'SELECT * FROM mainchars WHERE name = $1'
+      const query = "SELECT * FROM mainchars WHERE name LIKE '$1' "
 
-      const values = [encodedParamValue]
+      const values = [name]
 
       sql.query(query, values, (err: Error, result: QueryResult<any>) => {
         if (err) {
