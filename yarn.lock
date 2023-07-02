@@ -809,6 +809,11 @@
   dependencies:
     "@types/superagent" "*"
 
+"@types/swagger-ui-dist@^3.30.1":
+  version "3.30.1"
+  resolved "https://registry.npmjs.org/@types/swagger-ui-dist/-/swagger-ui-dist-3.30.1.tgz"
+  integrity sha512-wWojDensMF33dSrhak4iWSPOsWBbvf+rSJ6VWQ7ohQbGdKAiT2IwUexrDZkMvf3+vVAPVnNFDRDtxADFszbh+Q==
+
 "@types/swagger-ui-express@^4.1.3":
   version "4.1.3"
   resolved "https://registry.npmjs.org/@types/swagger-ui-express/-/swagger-ui-express-4.1.3.tgz"
