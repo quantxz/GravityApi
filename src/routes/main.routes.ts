@@ -8,7 +8,7 @@ const routes: Router = Router();
 const swaggerOptions = {
     swaggerOptions: {
       // Defina as opções do Swagger UI, incluindo o tema de estilo pré-definido
-      theme: 'some-predefined-theme', // Substitua "some-predefined-theme" pelo nome do tema desejado
+      theme: 'default', // Substitua "some-predefined-theme" pelo nome do tema desejado
     },
   };
 
