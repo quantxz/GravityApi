@@ -4,9 +4,9 @@ const BooksRoutes: Router = Router();
 
 BooksRoutes.get("/books", BooksControllers.ViewBooks); //feito
 
-BooksRoutes.get("/books/find/:id", BooksControllers.ViewSpecifyBookById); //feito
+BooksRoutes.get("/books/id/:id", BooksControllers.ViewSpecifyBookById); //feito
 
-BooksRoutes.get("/books/find/:name", BooksControllers.ViewSpecifyBookByName); //feito
+BooksRoutes.get("/books/name/:name", BooksControllers.ViewSpecifyBookByName); //feito
 
 BooksRoutes.post("/books", BooksControllers.InsertBook); //feito
 

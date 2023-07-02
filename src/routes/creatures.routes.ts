@@ -4,7 +4,7 @@ const CreaturesRoutes: Router = Router();
 
 CreaturesRoutes.get("/Creatures", CreaturesController.ViewCreatures);
 
-CreaturesRoutes.get("/Creatures/find/:name", CreaturesController.ViewSpecifyCreature);
+CreaturesRoutes.get("/Creatures/name/:name", CreaturesController.ViewSpecifyCreature);
 
 CreaturesRoutes.post("/Creatures", CreaturesController.InsertCreatures);
 
