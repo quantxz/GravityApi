@@ -22,7 +22,7 @@ class App {
   private middleware() {
     this.server.use(cors());
     this.server.use(express.json());
-    this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, { customCssUrl: './swagger/style/theme-monokai.css' }));
+    this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, { customCssUrl: '/swagger/style/theme-monokai.css' }));
   }
 
   private routes() {
@@ -43,6 +43,12 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
+});
+
+app.use(express.static(__dirname));
+app.use('*.css', (req, res, next) => {
+    res.set('Content-Type', 'text/css');
+    next();
 });
 
 export default app;
