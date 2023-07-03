@@ -11,7 +11,7 @@ import CreaturesRoutes from './routes/creatures.routes';
 import routes from './routes/main.routes';
 
 const options = {
-  customCss: '../node_modules/swagger-ui-dist/swagger-ui.css',
+  customCssUrl: '../node_modules/swagger-ui-dist/swagger-ui.css',
   customSiteTitle: "The Words That I Know API - Swagger"
 };
 
