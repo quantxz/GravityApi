@@ -1,12 +1,10 @@
 {
   "name": "RestFulllGfAPI",
   "version": "1.0.0",
-  "main": "server.ts",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon ./src/server",
-    "vercel-build": "npx prisma generate",
-    "yarn-add": "yarn add cors",
+    "start": "node ./src/server",
     "test": "jest"
   },
   "dependencies": {
