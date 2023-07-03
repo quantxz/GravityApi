@@ -7,6 +7,8 @@ import WeirdmageddonRoutes from './routes/Weirdmageddon.routes';
 import CreaturesRoutes from './routes/creatures.routes';
 import routes from './routes/main.routes';
 import cors from 'cors';
+import swaggerUI from "swagger-ui-express";
+import swaggerDocs from './jsons/swagger.json'
 
 class App {
   public server: express.Application;
@@ -20,6 +22,7 @@ class App {
   private middleware() {
     this.server.use(express.json());
     this.server.use(cors());
+    this.server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
   }
 
   private routes() {

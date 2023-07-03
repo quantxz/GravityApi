@@ -1,11 +1,8 @@
 import { Response, Router } from "express";
+import swaggerUI from "swagger-ui-express";
 const routes: Router = Router();
 
 
-routes.get('/', (res: Response) => {
-  return res.status(200).json({
-    message: 'Hello'
-  })
-});
+routes.get('/');
 
 export default routes;
