@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Response } from 'express';
 import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
 import swaggerDocs from './swagger/jsons/swagger.json';
@@ -28,7 +28,10 @@ class App {
   private middleware() {
     this.server.use(cors());
     this.server.use(express.json());
-    this.server.use('/api-docs', swaggerUI.serve, express.static(path.join(SRC_FOLDER, 'public')), swaggerUI.setup(swaggerDocs, options));
+    this.server.use('/api-docs', swaggerUI.serve, express.static(path.join(SRC_FOLDER, 'public')), (res: Response) => {
+      res.setHeader('Content-Type', 'text/css');
+      swaggerUI.setup(swaggerDocs, options)
+    });
   }
 
   private routes() {
