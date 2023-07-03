@@ -14,7 +14,7 @@ import bodyParser from 'body-parser';
 import { SwaggerUIBundle } from 'swagger-ui-dist';
 
 const options = {
-  customCss: SwaggerUIBundle['swagger-ui.css'],
+  CustomCss: process.env.STYLE,
   customSiteTitle: "The Words That I Know API - Swagger"
 };
 
