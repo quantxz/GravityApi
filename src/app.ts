@@ -22,7 +22,7 @@ class App {
   private middleware() {
     this.server.use(cors());
     this.server.use(express.json());
-    this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, { customCssUrl: '/swagger/style/theme-monokai.css' }));
+    this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, { customCssUrl: './swagger/style/theme-monokai.css' }));
   }
 
   private routes() {
