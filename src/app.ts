@@ -12,7 +12,7 @@ import routes from './routes/main.routes';
 import path from 'path';
 import bodyParser from 'body-parser';
 
-const options = { customCssUrl: path.join(__dirname) + `src/swagger/style/theme-monokai.css`, customSiteTitle: "The Words That I Know API - Swagger" };
+const options = { customCssUrl: '/swagger/style/theme-monokai.css', customSiteTitle: "The Words That I Know API - Swagger" };
 const ROOT_FOLDER = path.join(__dirname, '..');
 const SRC_FOLDER = path.join(ROOT_FOLDER, 'src');
 
