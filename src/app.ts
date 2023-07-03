@@ -9,7 +9,11 @@ import BooksRoutes from './routes/books.routes';
 import WeirdmageddonRoutes from './routes/Weirdmageddon.routes';
 import CreaturesRoutes from './routes/creatures.routes';
 import routes from './routes/main.routes';
-import '../node_modules/swagger-ui-dist/swagger-ui.css'
+
+const options = {
+  customCss: '../node_modules/swagger-ui-dist/swagger-ui.css',
+  customSiteTitle: "The Words That I Know API - Swagger"
+};
 
 class App {
   public server: express.Application;
@@ -23,7 +27,7 @@ class App {
   private middleware() {
     this.server.use(cors());
     this.server.use(express.json());
-    this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
+    this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, options));
   }
 
   private routes() {
