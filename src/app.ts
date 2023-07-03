@@ -1,4 +1,4 @@
-import express, { Response } from 'express';
+import express from 'express';
 import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
 import swaggerDocs from './swagger/jsons/swagger.json';
@@ -12,7 +12,7 @@ import routes from './routes/main.routes';
 import path from 'path';
 import bodyParser from 'body-parser';
 
-const options = { customCssUrl: '/swagger/style/theme-monokai.css', customSiteTitle: "The Words That I Know API - Swagger" };
+const options = { customCssUrl: '/src/swagger/style/theme-monokai.css', customSiteTitle: "The Words That I Know API - Swagger" };
 const ROOT_FOLDER = path.join(__dirname, '..');
 const SRC_FOLDER = path.join(ROOT_FOLDER, 'src');
 
@@ -28,10 +28,7 @@ class App {
   private middleware() {
     this.server.use(cors());
     this.server.use(express.json());
-    this.server.use('/api-docs', swaggerUI.serve, express.static(path.join(SRC_FOLDER, 'public')), (res: Response) => {
-      res.setHeader('Content-Type', 'text/css');
-      swaggerUI.setup(swaggerDocs, options)
-    });
+    this.server.use('/api-docs', swaggerUI.serve, express.static(path.join(SRC_FOLDER, 'public')), swaggerUI.setup(swaggerDocs, options));
   }
 
   private routes() {
