@@ -11,8 +11,13 @@ import CreaturesRoutes from './routes/creatures.routes';
 import routes from './routes/main.routes';
 import path from 'path';
 import bodyParser from 'body-parser';
+import { SwaggerUIBundle } from 'swagger-ui-dist';
 
-const options = { customCssUrl: '/src/swagger/style/theme-monokai.css', customSiteTitle: "The Words That I Know API - Swagger" };
+const options = {
+  customCss: SwaggerUIBundle['swagger-ui.css'].toString(),
+  customSiteTitle: "The Words That I Know API - Swagger"
+};
+
 const ROOT_FOLDER = path.join(__dirname, '..');
 const SRC_FOLDER = path.join(ROOT_FOLDER, 'src');
 
