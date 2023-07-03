@@ -13,7 +13,7 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import "./swagger/style/theme-monokai.css"
 
-const options = { customCssUrl: path.join(__dirname) + '/swagger/style/theme-monokai.css', customSiteTitle: "The Words That I Know API - Swagger" };
+const options = { customCssUrl: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.1.0/swagger-ui.css', customSiteTitle: "The Words That I Know API - Swagger" };
 const ROOT_FOLDER = path.join(__dirname, '..');
 const SRC_FOLDER = path.join(ROOT_FOLDER, 'src');
 
