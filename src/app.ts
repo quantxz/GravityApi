@@ -22,6 +22,12 @@ class App {
   private middleware() {
     this.server.use(express.json());
     this.server.use(cors());
+    this.server.use(express.static(__dirname));
+    this.server.use('.css', (req, res, next) => {
+    res.set('Content-Type', 'text/css');
+    next();
+    });
+    
     this.server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs, { customCssUrl: './swagger/style/theme-monokai.css' }));
   }
 
