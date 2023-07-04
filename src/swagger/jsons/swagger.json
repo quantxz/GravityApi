@@ -21,9 +21,12 @@
                 "tags": ["Episodes"],
                 "parameters": [
                     {
-                        ":id": ":id",
-                        "in": "params",
-                        "required": true
+                        "name": ":id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"  
+                        }
                     }
                 ],
                 "responses": {
