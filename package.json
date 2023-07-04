@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon ./src/server",
+    "deev": "style.css",
     "start": "node ./src/server.ts",
     "test": "jest"
   },
