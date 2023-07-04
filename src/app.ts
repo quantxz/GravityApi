@@ -9,9 +9,10 @@ import BooksRoutes from './routes/books.routes';
 import WeirdmageddonRoutes from './routes/Weirdmageddon.routes';
 import CreaturesRoutes from './routes/creatures.routes';
 import routes from './routes/main.routes';
+import path from 'path';
 
 const options = {
-  customCssUrl: '../node_modules/swagger-ui-dist/swagger-ui.css',
+  customCssUrl: path.join(__dirname) + '../node_modules/swagger-ui-dist/swagger-ui.css',
   customSiteTitle: "The Words That I Know API - Swagger"
 };
 
