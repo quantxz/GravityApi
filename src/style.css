@@ -1,3 +1,7 @@
+* {
+    font-family: 'poppins', sans-serif;
+}
+
 .swagger-ui html {
   box-sizing: border-box
 }

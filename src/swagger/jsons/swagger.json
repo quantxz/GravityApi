@@ -14,7 +14,7 @@
         }
     ],
     "paths": {
-        "/episodes/": {
+        "/episodes/id/": {
             "get": {
                 "summary": "Requisição dos Episodios",
                 "description": "Essa rota do tipo get, retorna todos os episodios",
