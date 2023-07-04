@@ -113,7 +113,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/Book"
                                 }
                             }
                         }
@@ -145,7 +145,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/Book"
                                 }
                             }
                         }
@@ -177,7 +177,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/Book"
                                 }
                             }
                         }
@@ -199,7 +199,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/MainChar"
                                 }
                             }
                         }
@@ -232,7 +232,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/MainChar"
                                 }
                             }
                         }
@@ -253,7 +253,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/OtherChar"
                                 }
                             }
                         }
@@ -286,7 +286,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/OtherChar"
                                 }
                             }
                         }
@@ -307,7 +307,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/OtherChar"
                                 }
                             }
                         }
@@ -340,7 +340,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/OtherChar"
                                 }
                             }
                         }
@@ -361,7 +361,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/Creature"
                                 }
                             }
                         }
@@ -394,7 +394,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/Creature"
                                 }
                             }
                         }
@@ -415,7 +415,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/Creature"
                                 }
                             }
                         }
@@ -448,7 +448,264 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
+                                    "$ref": "#/components/schemas/Creature"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        
+        "/Relatives/MainChars": {
+            "get": {
+                "summary": "Requisição as relações (familiares)",
+                "description": "Essa rota, retorna todas as relções (familiares) dos personagems principais",
+                "tags": ["Relatives"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesMainChar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Relatives/MainChars/id/{id}": {
+            "get": {
+                "summary": "Requisição das relações (familiares) por um id",
+                "description": "Essa rota, retorna as relções (familiares) de um  personagem principal com base em um id",
+                "tags": ["Relatives"],
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID da relação",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesMainChar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Relatives/MainChars/name/{name}": {
+            "get": {
+                "summary": "Requisição das relações (familiares) por um nome de personagem",
+                "description": "Essa rota, retorna as relções (familiares) do personagem principal com base no nome do mesmo",
+                "tags": ["Relatives"],
+                "parameters": [
+                    {
+                      "name": "name",
+                      "in": "path",
+                      "description": "nome do personagem",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesMainChar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        
+        "/Relatives/RecChars": {
+            "get": {
+                "summary": "Requisição as relações (familiares)",
+                "description": "Essa rota, retorna todas as relções (familiares) dos personagems recorrentes",
+                "tags": ["Relatives"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesOthersChar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Relatives/RecChars/id/{id}": {
+            "get": {
+                "summary": "Requisição das relações (familiares) por um id",
+                "description": "Essa rota, retorna as relções (familiares) de um  personagem recorrente com base em um id",
+                "tags": ["Relatives"],
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID da relação",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesOthersChar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Relatives/RecChars/name/{name}": {
+            "get": {
+                "summary": "Requisição das relações (familiares) por um nome de personagem",
+                "description": "Essa rota, retorna as relações (familiares) do personagem recorrente com base no nome do mesmo",
+                "tags": ["Relatives"],
+                "parameters": [
+                    {
+                      "name": "nome",
+                      "in": "path",
+                      "description": "nome do personagem",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesOthersChar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        
+        "/Relatives/MinorChars": {
+            "get": {
+                "summary": "Requisição as relações (familiares)",
+                "description": "Essa rota, retorna todas as relções (familiares) dos personagems menores",
+                "tags": ["Relatives"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesOthersChar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Relatives/MinorChars/id/{id}": {
+            "get": {
+                "summary": "Requisição das relações (familiares) por um id",
+                "description": "Essa rota, retorna as relções (familiares) de um dos personagem menores com base em um id",
+                "tags": ["Relatives"],
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID da relação",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesOthersChar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Relatives/MinorChars/name/{name}": {
+            "get": {
+                "summary": "Requisição das relações (familiares) por um nome de personagem",
+                "description": "Essa rota, retorna as relações (familiares) de um dos personagens menores com base no nome do mesmo",
+                "tags": ["Relatives"],
+                "parameters": [
+                    {
+                      "name": "nome",
+                      "in": "path",
+                      "description": "nome do personagem",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/RelativesOthersChar"
                                 }
                             }
                         }
@@ -488,6 +745,358 @@
                     "written_by": {
                         "type": "string"
                     }
+                }
+            },
+            "Book": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "titleBr": {
+                        "type": "string"
+                    },
+                    "format": {
+                        "type": "string"
+                    },
+                    "formatBr": {
+                        "type": "string"
+                    },
+                    "mainGenre": {
+                        "type": "string"
+                    },
+                    "mainGenreBr": {
+                        "type": "string"
+                    },
+                    "pages": {
+                        "type": "number"
+                    },
+                    "published": {
+                        "type": "string"
+                    },
+                    "publishedBr": {
+                        "type": "string"
+                    },
+                    "rating": {
+                        "type": "string"
+                    },
+                    "ratingBr": {
+                        "type": "string"
+                    },
+                    "author": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    }
+
+                }
+            },
+            "MainChar": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "first_episode": {
+                        "type": "string"
+                    },
+                    "last_episode": {
+                        "type": "string"
+                    },
+                    "voice": {
+                        "type": "string"
+                    },
+                    "abilities": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "string"
+                    },
+                    "born": {
+                        "type": "string"
+                    },
+                    "ocuppation": {
+                        "type": "string"
+                    },
+                    "inspiration": {
+                        "type": "string"
+                    },
+                    "likes": {
+                        "type": "string"
+                    },
+                    "dislikes": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    }
+
+                }
+            },
+            "OtherChar": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "first_episode": {
+                        "type": "string"
+                    },
+                    "last_episode": {
+                        "type": "string"
+                    },
+                    "mentions": {
+                        "type": "string"
+                    },
+                    "no_lines": {
+                        "type": "string"
+                    },
+                    "voice": {
+                        "type": "string"
+                    },
+                    "abilities": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "string"
+                    },
+                    "born": {
+                        "type": "string"
+                    },
+                    "ocuppation": {
+                        "type": "string"
+                    },
+                    "inspiration": {
+                        "type": "string"
+                    },
+                    "likes": {
+                        "type": "string"
+                    },
+                    "dislikes": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    }
+
+                }
+            },
+            "Creature": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "first_episode": {
+                        "type": "string"
+                    },
+                    "last_episode": {
+                        "type": "string"
+                    },
+                    "mentions": {
+                        "type": "string"
+                    },
+                    "no_lines": {
+                        "type": "string"
+                    },
+                    "voice": {
+                        "type": "string"
+                    },
+                    "species": {
+                        "type": "string"
+                    },
+                    "abilities": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "string"
+                    },
+                    "born": {
+                        "type": "string"
+                    },
+                    "ocuppation": {
+                        "type": "string"
+                    },
+                    "inspiration": {
+                        "type": "string"
+                    },
+                    "fate": {
+                        "type": "string"
+                    },
+                    "quote": {
+                        "type": "string"
+                    },
+                    "likes": {
+                        "type": "string"
+                    },
+                    "dislikes": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    }
+
+                }
+            },
+            "RelativesMainChar": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "parents": {
+                    "type": "string"
+                  },
+                  "sister_or_brother": {
+                    "type": "string"
+                  },
+                  "grandfather": {
+                    "type": "string"
+                  },
+                  "great_grandfather_or_great_grandmother": {
+                    "type": "string"
+                  },
+                  "granduncle": {
+                    "type": "string"
+                  },
+                  "ex_grandaunt_in_law": {
+                    "type": "string"
+                  },
+                  "great_niece_or_great_nephew": {
+                    "type": "string"
+                  },
+                  "nephew_or_niece_in_law": {
+                    "type": "string"
+                  },
+                  "ex_wife": {
+                    "type": "string"
+                  },
+                  "ancestor": {
+                    "type": "string"
+                  },
+                  "maternal_cousin": {
+                    "type": "string"
+                  },
+                  "maternal_grandfather": {
+                    "type": "string"
+                  },
+                  "maternal_grandmother": {
+                    "type": "string"
+                  },
+                  "charactername": {
+                    "type": "string"
+                  }
+                }
+            },
+            "RelativesOthersChar": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "parents": {
+                    "type": "string"
+                  },
+                  "sister_or_brother": {
+                    "type": "string"
+                  },
+                  "grandfather": {
+                    "type": "string"
+                  },
+                  "great_grandfather_or_great_grandmother": {
+                    "type": "string"
+                  },
+                  "granduncle": {
+                    "type": "string"
+                  },
+                  "grand_daughters": {
+                    "type": "string"
+                  },
+                  "grandson": {
+                    "type": "string"
+                  },
+                  "ex_grandaunt_in_law": {
+                    "type": "string"
+                  },
+                  "great_niece_or_great_nephew": {
+                    "type": "string"
+                  },
+                  "nephew_or_niece_in_law": {
+                    "type": "string"
+                  },
+                  "great_grandfather": {
+                    "type": "string"
+                  },
+                  "great_great_grandfather": {
+                    "type": "string"
+                  },
+                  "ex_wife": {
+                    "type": "string"
+                  },
+                  "ancestor": {
+                    "type": "string"
+                  },
+                  "maternal_cousin": {
+                    "type": "string"
+                  },
+                  "maternal_grandfather": {
+                    "type": "string"
+                  },
+                  "maternal_grandmother": {
+                    "type": "string"
+                  },
+                  "wife": {
+                    "type": "string"
+                  },
+                  "husband": {
+                    "type": "string"
+                  },
+                  "son": {
+                    "type": "string"
+                  },
+                  "mother": {
+                    "type": "string"
+                  },
+                  "father": {
+                    "type": "string"
+                  },
+                  "daughter": {
+                    "type": "string"
+                  },
+                  "unnamed_niece_or_nephew": {
+                    "type": "string"
+                  },
+                  "father_in_law": {
+                    "type": "string"
+                  },
+                  "great_grandfather_in_law": {
+                    "type": "string"
+                  },
+                  "ancestor_in_law": {
+                    "type": "string"
+                  },
+                  "unknow": {
+                    "type": "string"
+                  },
+                  "cousin": {
+                    "type": "string"
+                  },
+                  "charactername": {
+                    "type": "string"
+                  }
                 }
             }
         }
