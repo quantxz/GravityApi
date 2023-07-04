@@ -22,7 +22,7 @@
                 "parameters": [
                     {
                         ":id": ":id",
-                        "in": "parameters",
+                        "in": "params",
                         "required": true
                     }
                 ],
