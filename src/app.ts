@@ -54,7 +54,7 @@ app.use((req, res, next) => {
 
 app.get('/style.css', (req, res) => {
   res.type('text/css');
-  res.sendFile(path.join(__dirname, 'public', 'style.css'));
+  res.sendFile(path.join(__dirname, 'style.css'));
 });
 
 export default app;
