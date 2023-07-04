@@ -21,7 +21,7 @@
                 "tags": ["Episodes"],
                 "parameters": [
                     {
-                        "id": "id",
+                        ":id": ":id",
                         "in": "parameters",
                         "required": true
                     }
