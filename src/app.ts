@@ -12,7 +12,7 @@ import routes from './routes/main.routes';
 import path from 'path';
 
 const options = {
-  customCssUrl: path.join(__dirname) + '../node_modules/swagger-ui-dist/swagger-ui.css',
+  customCssUrl: path.join(__dirname) + '/swagger-ui-dist/swagger-ui.css',
   customSiteTitle: "The Words That I Know API - Swagger"
 };
 
