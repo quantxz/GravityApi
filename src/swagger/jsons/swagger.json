@@ -353,7 +353,7 @@
             "get": {
                 "summary": "Requisição das criaturas que apareceram no decorrer da serie",
                 "description": "Essa rota, retorna as criaturas da serie",
-                "tags": ["Characters"],
+                "tags": ["Creatures"],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -375,7 +375,7 @@
             "get": {
                 "summary": "Requisição as criaturas da serie com base no nome",
                 "description": "Essa rota, retorna uma das as criaturas da serie com base no nome da mesma",
-                "tags": ["Characters"],
+                "tags": ["Creatures"],
                 "parameters": [
                     {
                       "name": "name",
@@ -407,7 +407,7 @@
             "get": {
                 "summary": "Requisição das criaturas que apareceram no decorrer do estranhagedon (final da serie)",
                 "description": "Essa rota, retorna as criaturas do estranhagedon",
-                "tags": ["Characters"],
+                "tags": ["Creatures"],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -429,7 +429,7 @@
             "get": {
                 "summary": "Requisição as criaturas do estranhagedon com base no nome",
                 "description": "Essa rota, retorna uma das as criaturas do estranhagedon com base no nome da mesma",
-                "tags": ["Characters"],
+                "tags": ["Creatures"],
                 "parameters": [
                     {
                       "name": "name",
