@@ -18,7 +18,7 @@
         "/episodes": {
             "get": {
                 "summary": "Requisição dos Episodios",
-                "description": "Essa rota do tipo get, retorna todos os episodios",
+                "description": "Essa rota, retorna todos os episodios",
                 "tags": ["Episodes"],
                 "responses": {
                     "200": {
@@ -38,8 +38,8 @@
 
         "/episodes/id/{id}": {
             "get": {
-                "summary": "Requisição dos Episodios",
-                "description": "Essa rota do tipo get, retorna um episodio especifico com base em um id",
+                "summary": "Requisição de um episodio por id",
+                "description": "Essa rota, retorna um episodio especifico com base em um id",
                 "tags": ["Episodes"],
                 "parameters": [
                     {
@@ -70,8 +70,8 @@
 
         "/episodes/title/{title}": {
             "get": {
-                "summary": "Requisição dos Episodios",
-                "description": "Essa rota do tipo get, retorna um episodio especifico com base em um titulo",
+                "summary": "Requisição de um episodio pelo titulo",
+                "description": "Essa rota, retorna um episodio especifico com base em um titulo",
                 "tags": ["Episodes"],
                 "parameters": [
                     {
@@ -98,7 +98,93 @@
                     }
                 }
             }
+        },
+
+        "/books": {
+            "get": {
+                "summary": "Requisição dos livros",
+                "description": "Essa rota, retorna todos os livros",
+                "tags": ["Books"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/books/id/{id}": {
+            "get": {
+                "summary": "Requisição de um episodio por id",
+                "description": "Essa rota, retorna um livro especifico com base em um id",
+                "tags": ["Episodes"],
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID do episódio",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/books/title/{title}": {
+            "get": {
+                "summary": "Requisição de um episodio pelo titulo",
+                "description": "Essa rota, retorna um livro especifico com base em um titulo",
+                "tags": ["Books"],
+                "parameters": [
+                    {
+                      "name": "title",
+                      "in": "path",
+                      "description": "titulo do episódio",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+
     },
 
     "components": {
