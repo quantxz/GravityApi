@@ -99,6 +99,7 @@
                 }
             }
         },
+        
 
         "/books": {
             "get": {
@@ -185,6 +186,7 @@
             }
         },
 
+
         "/Characters/Main": {
             "get": {
                 "summary": "Requisição dos personagens principais",
@@ -211,6 +213,60 @@
             "get": {
                 "summary": "Requisição de um dos personagens principais com basse no nome",
                 "description": "Essa rota, retorna um dos personagens com base no nome do mesmo",
+                "tags": ["Characters"],
+                "parameters": [
+                    {
+                      "name": "name",
+                      "in": "path",
+                      "description": "nome do personagen",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+  
+        "/Characters/Rec": {
+            "get": {
+                "summary": "Requisição dos personagens recorrentes durante o decorrer da serie",
+                "description": "Essa rota, retorna os personagems recorrentes da serie",
+                "tags": ["Characters"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Characters/Rec/name/{name}": {
+
+            "get": {
+                "summary": "Requisição de um dos personagens recorrentes com basse no nome",
+                "description": "Essa rota, retorna um dos personagens recorrentes com base no nome do mesmo",
                 "tags": ["Characters"],
                 "parameters": [
                     {
@@ -265,60 +321,6 @@
             "get": {
                 "summary": "Requisição de um dos personagens Menores com basse no nome",
                 "description": "Essa rota, retorna um dos personagens Menores com base no nome do mesmo",
-                "tags": ["Characters"],
-                "parameters": [
-                    {
-                      "name": "name",
-                      "in": "path",
-                      "description": "nome do personagen",
-                      "required": true,
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-
-        "/Characters/Rec": {
-            "get": {
-                "summary": "Requisição dos personagens recorrentes durante o decorrer da serie",
-                "description": "Essa rota, retorna os personagems recorrentes da serie",
-                "tags": ["Characters"],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "$ref": "#/components/schemas/Episode"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-
-        "/Characters/Rec/name/{name}": {
-
-            "get": {
-                "summary": "Requisição de um dos personagens recorrentes com basse no nome",
-                "description": "Essa rota, retorna um dos personagens recorrentes com base no nome do mesmo",
                 "tags": ["Characters"],
                 "parameters": [
                     {
