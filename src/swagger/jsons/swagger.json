@@ -7,10 +7,12 @@
             "email": "anderson.backdev@gmail.com"
         }
     },
-    "servers": {
-        "url": "https://gf-db-transfer-quantxz.vercel.app",
-        "description": "URL base"
-    },
+    "servers": [
+        {
+            "url": "https://gf-db-transfer-quantxz.vercel.app",
+            "description": "URL base"
+        }
+    ],
     "paths": {
         "/episodes": {
             "get": {
