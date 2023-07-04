@@ -12,7 +12,7 @@ import routes from './routes/main.routes';
 import path from 'path';
 
 const options = {
-  customCssUrl: '/style.css',
+  customCssUrl: '/sstyle.css',
   customSiteTitle: "The Words That I Know API - Swagger"
 };
 
