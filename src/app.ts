@@ -12,7 +12,7 @@ import routes from './routes/main.routes';
 import path from 'path';
 
 const options = {
-  customCssUrl: path.join(__dirname) + '/style.css',
+  customCssUrl: 'https://gf-db-transfer-quantxz.vercel.app/style.css',
   customSiteTitle: "The Words That I Know API - Swagger"
 };
 
