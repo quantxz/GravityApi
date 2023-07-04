@@ -6,7 +6,7 @@ BooksRoutes.get("/books", BooksControllers.ViewBooks); //feito
 
 BooksRoutes.get("/books/id/:id", BooksControllers.ViewSpecifyBookById); //feito
 
-BooksRoutes.get("/books/title/:name", BooksControllers.ViewSpecifyBookByName); //feito
+BooksRoutes.get("/books/title/:title", BooksControllers.ViewSpecifyBookByName); //feito
 
 BooksRoutes.post("/books", BooksControllers.InsertBook); //feito
 

@@ -51,11 +51,11 @@ class EpisodeController {
     
     public async ViewSpecifyEpisodeByName(req: Request, res: Response) {
         try {
-            const { name } = req.params;
+            const { title } = req.params;
 
             const query = "SELECT * FROM episodes WHERE title LIKE $1"
       
-            const values = [name]
+            const values = [title]
       
             sql.query(query, values, (err: Error, result: QueryResult<any>) => {
               if (err) {
