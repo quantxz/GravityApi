@@ -46,8 +46,8 @@
                 }
             }
         },
-        
-        "/episodes/title/{title}": {
+
+        "/episodes/title/{name}": {
             "get": {
                 "summary": "Requisição dos Episodios",
                 "description": "Essa rota do tipo get, retorna todos os episodios",
