@@ -28,9 +28,7 @@ class App {
   private middleware() {
     this.server.use(cors());
     this.server.use(express.json());
-    this.server.use(express.static('src'), (res: Response) => {
-      res.type('text/css');
-    });
+    this.server.use(express.static('src'));
     this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, options));
   }
 
@@ -52,6 +50,11 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
+});
+
+app.get('/style.css', (req, res) => {
+  res.type('text/css');
+  res.sendFile(path.join(__dirname, 'public', 'style.css'));
 });
 
 export default app;
