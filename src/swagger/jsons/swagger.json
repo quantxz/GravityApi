@@ -99,7 +99,7 @@
                 }
             }
         },
-        
+
 
         "/books": {
             "get": {
@@ -211,7 +211,7 @@
         "/Characters/Main/name/{name}": {
 
             "get": {
-                "summary": "Requisição de um dos personagens principais com basse no nome",
+                "summary": "Requisição de um dos personagens principais com base no nome",
                 "description": "Essa rota, retorna um dos personagens com base no nome do mesmo",
                 "tags": ["Characters"],
                 "parameters": [
@@ -265,7 +265,7 @@
         "/Characters/Rec/name/{name}": {
 
             "get": {
-                "summary": "Requisição de um dos personagens recorrentes com basse no nome",
+                "summary": "Requisição de um dos personagens recorrentes com base no nome",
                 "description": "Essa rota, retorna um dos personagens recorrentes com base no nome do mesmo",
                 "tags": ["Characters"],
                 "parameters": [
@@ -319,8 +319,116 @@
         "/Characters/Minors/name/{name}": {
 
             "get": {
-                "summary": "Requisição de um dos personagens Menores com basse no nome",
+                "summary": "Requisição de um dos personagens Menores com base no nome",
                 "description": "Essa rota, retorna um dos personagens Menores com base no nome do mesmo",
+                "tags": ["Characters"],
+                "parameters": [
+                    {
+                      "name": "name",
+                      "in": "path",
+                      "description": "nome do personagen",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Creatures": {
+            "get": {
+                "summary": "Requisição das criaturas que apareceram no decorrer da serie",
+                "description": "Essa rota, retorna as criaturas da serie",
+                "tags": ["Characters"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Creatures/name/{name}": {
+
+            "get": {
+                "summary": "Requisição as criaturas da serie com base no nome",
+                "description": "Essa rota, retorna uma das as criaturas da serie com base no nome da mesma",
+                "tags": ["Characters"],
+                "parameters": [
+                    {
+                      "name": "name",
+                      "in": "path",
+                      "description": "nome do personagen",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Creatures/Weirdmageddon": {
+            "get": {
+                "summary": "Requisição das criaturas que apareceram no decorrer do estranhagedon (final da serie)",
+                "description": "Essa rota, retorna as criaturas do estranhagedon",
+                "tags": ["Characters"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Creatures/Weirdmageddon/name/{name}": {
+
+            "get": {
+                "summary": "Requisição as criaturas do estranhagedon com base no nome",
+                "description": "Essa rota, retorna uma das as criaturas do estranhagedon com base no nome da mesma",
                 "tags": ["Characters"],
                 "parameters": [
                     {
