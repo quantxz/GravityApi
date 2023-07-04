@@ -6,7 +6,7 @@ EpisodesRoute.get("/episodes", EpisodesControlllers.ViewEpisode); //feito
 
 EpisodesRoute.get("/episodes/id/:id", EpisodesControlllers.ViewSpecifyEpisodeById); //feito
 
-EpisodesRoute.get("/episodes/name/:name", EpisodesControlllers.ViewSpecifyEpisodeByName); //feito
+EpisodesRoute.get("/episodes/title/:name", EpisodesControlllers.ViewSpecifyEpisodeByName); //feito
 
 EpisodesRoute.post("/episodes", EpisodesControlllers.insertEpisode); //feito
 

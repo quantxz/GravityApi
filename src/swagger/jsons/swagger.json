@@ -14,6 +14,7 @@
         }
     ],
     "paths": {
+
         "/episodes/id/{id}": {
             "get": {
                 "summary": "Requisição dos Episodios",
@@ -24,6 +25,38 @@
                       "name": "id",
                       "in": "path",
                       "description": "ID do episódio",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        
+        "/episodes/title/{title}": {
+            "get": {
+                "summary": "Requisição dos Episodios",
+                "description": "Essa rota do tipo get, retorna todos os episodios",
+                "tags": ["Episodes"],
+                "parameters": [
+                    {
+                      "name": "name",
+                      "in": "path",
+                      "description": "titulo do episódio",
                       "required": true,
                       "schema": {
                         "type": "string"
