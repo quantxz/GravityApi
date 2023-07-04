@@ -6,5 +6,13 @@
         "contact": {
             "email": "anderson.backdev@gmail.com"
         }
+    },
+    "path": {
+        "/episodes": {
+            "get": {
+                "summary": "Requisição dos Episodios",
+                "description": "Essa rota do tipo get, retorna todos os episodios"
+            }
+        }
     }
 }
