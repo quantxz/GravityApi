@@ -123,14 +123,14 @@
 
         "/books/id/{id}": {
             "get": {
-                "summary": "Requisição de um episodio por id",
+                "summary": "Requisição de um livro por id",
                 "description": "Essa rota, retorna um livro especifico com base em um id",
-                "tags": ["Episodes"],
+                "tags": ["Books"],
                 "parameters": [
                     {
                       "name": "id",
                       "in": "path",
-                      "description": "ID do episódio",
+                      "description": "ID do livro",
                       "required": true,
                       "schema": {
                         "type": "string"
@@ -155,14 +155,68 @@
 
         "/books/title/{title}": {
             "get": {
-                "summary": "Requisição de um episodio pelo titulo",
+                "summary": "Requisição de um livro pelo titulo",
                 "description": "Essa rota, retorna um livro especifico com base em um titulo",
                 "tags": ["Books"],
                 "parameters": [
                     {
                       "name": "title",
                       "in": "path",
-                      "description": "titulo do episódio",
+                      "description": "titulo do livro",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/Characters/Main": {
+            "get": {
+                "summary": "Requisição das personagens principais",
+                "description": "Essa rota, retorna os personagems principais da serie",
+                "tags": ["Characters"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Episode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        
+        "/Characters/Main/name/{name}": {
+
+            "get": {
+                "summary": "Requisição de um dos personagens principais com basse no nome",
+                "description": "Essa rota, retorna um dos personagens com base no nome do mesmo",
+                "tags": ["Characters"],
+                "parameters": [
+                    {
+                      "name": "name",
+                      "in": "path",
+                      "description": "nome do personagen",
                       "required": true,
                       "schema": {
                         "type": "string"
