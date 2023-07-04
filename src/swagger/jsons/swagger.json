@@ -14,18 +14,11 @@
         }
     ],
     "paths": {
-        "/episodes/id/:id": {
+        "/episodes": {
             "get": {
                 "summary": "Requisição dos Episodios",
                 "description": "Essa rota do tipo get, retorna todos os episodios",
                 "tags": ["Episodes"],
-                "parameters": [
-                    {
-                        "id": "id",
-                        "in": "params",
-                        "required": true
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "OK",
