@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { QueryResult, sql } from "@vercel/postgres";
 import { CreateEpisode } from "../../models/episodes/insertEpisodesModel";
+import Decipher from "../../../middlewares/token";
+require('dotenv').config();
 
 class EpisodeController {
     public async ViewEpisode(req: Request, res: Response) {
@@ -16,14 +18,22 @@ class EpisodeController {
     }
     
     public async insertEpisode(req: Request, res: Response) {
-        try {
-            const { ...data } = req.body;
-            await CreateEpisode(data);
-    
-            const query = 'SELECT * FROM episodes';
-            const { rows } = await sql.query(query);
+        try {        
+            const token: any = req.headers['x-acess-token']
             
-            return res.status(200).json(rows);
+            if(Decipher(token) === process.env.SECRET){
+                const { ...data } = req.body;
+                await CreateEpisode(data);
+        
+                const query = 'SELECT * FROM episodes';
+                const { rows } = await sql.query(query);
+                
+                return res.status(200).json(rows);
+            } else {
+                return res.status(401).json({
+                  "errorMessage": "usuario não autorizado a fazer esta operação"
+                })
+              }
         } catch (err) {
             return res.status(500).json(err);
         }

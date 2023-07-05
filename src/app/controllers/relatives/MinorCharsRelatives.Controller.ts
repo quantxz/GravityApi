@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { QueryResult, sql } from "@vercel/postgres";
 import { CreateRelatives } from "../../models/relatives/MainCharsRealatives";
 import { CreateMinorsRelatives } from "../../models/relatives/MinorCharsRelatives";
+import Decipher from "../../../middlewares/token";
 
 class MinorsRelativesController {
     public async ViewRelations(req: Request, res: Response) {
@@ -20,13 +21,21 @@ class MinorsRelativesController {
     public async InsertRelations(req: Request, res: Response) {
         try {
             const { ...data } = req.body;
-            const query = 'SELECT * FROM minoscharsrelatives';
+            const token: any = req.headers['x-acess-token']
+        
+            if(Decipher(token) === process.env.SECRET){
+                const query = 'SELECT * FROM minoscharsrelatives';
 
-            await CreateMinorsRelatives(data);
+                await CreateMinorsRelatives(data);
+                
+                const { rows } = await sql.query(query);
+                return res.status(200).json(rows);
+            } else {
+                return res.status(401).json({
+                  "errorMessage": "usuario não autorizado a fazer esta operação"
+                })
+            }
             
-            const { rows } = await sql.query(query);
-            return res.status(200).json(rows);
-
         } catch(err) {
             return res.status(500).json(err);
         }

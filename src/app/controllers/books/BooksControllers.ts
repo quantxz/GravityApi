@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import { QueryResult, sql } from "@vercel/postgres";
 import { CreateBook } from "../../models/Books/InsertBooksModel";
-
+import Decipher from "../../../middlewares/token";
+require('dotenv').config();
 
 class BooksController {
   public async ViewBooks(req: Request, res: Response) {
@@ -19,13 +20,22 @@ class BooksController {
   public async InsertBook(req: Request, res: Response) {
     try {
       const { ...data } = req.body;
+      const token: any = req.headers['x-acess-token']
+      
+      if(Decipher(token) === process.env.SECRET) {
+        
+              await CreateBook(data)
+        
+              const query = "SELECT * FROM books";
+        
+              const { rows } = await sql.query(query);
 
-      await CreateBook(data);
-
-      const query = "SELECT * FROM books";
-
-      const { rows } = await sql.query(query);
-      return res.status(200).json(rows);
+              return res.status(200).json(rows);
+      } else {
+        return res.status(401).json({
+          "errorMessage": "usuario não autorizado a fazer esta operação"
+        })
+      }
 
     } catch(err) {
       return res.status(500).json(err);

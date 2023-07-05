@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { QueryResult, sql } from "@vercel/postgres";
 import { createRecCharacters } from "../../models/Chars/InsertRecChars";
+import Decipher from "../../../middlewares/token";
+require('dotenv').config();
 
 class RecCharsController {
     public async ViewRecChars(req: Request, res: Response) {
@@ -18,12 +20,20 @@ class RecCharsController {
     public async InsertRecChars(req: Request, res: Response) {
         try {
             const { ...data } = req.body;
+            const token: any = req.headers['x-acess-token']
+        
+            if(Decipher(token) === process.env.SECRET){
+                await createRecCharacters(data);
 
-            await createRecCharacters(data);
+                const query = 'SELECT * FROM recurrentschars';
+                const { rows } = await sql.query(query);
 
-            const query = 'SELECT * FROM recurrentschars';
-            const { rows } = await sql.query(query);
-            return res.status(200).json(rows);
+                return res.status(200).json(rows);
+            } else {
+                return res.status(401).json({
+                  "errorMessage": "usuario não autorizado a fazer esta operação"
+                })
+            }
 
         } catch (err) {
             return res.status(500).json(err);

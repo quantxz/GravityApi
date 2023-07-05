@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { QueryResult, sql } from "@vercel/postgres";
 import { CreateAnyCreature } from "../../models/creatures/anyCreature";
+import Decipher from "../../../middlewares/token";
+require('dotenv').config();
 
 class CreaturesController {
     public async ViewCreatures(req: Request, res: Response) {
@@ -16,15 +18,25 @@ class CreaturesController {
     }
 
     public async InsertCreatures(req: Request, res: Response) {
-        try {
-            const query = 'SELECT * FROM anycreature';
+        try {        
+            const token: any = req.headers['x-acess-token']
+            
+            if(Decipher(token) === process.env.SECRET){
+                const query = 'SELECT * FROM anycreature';
 
-            const { ...data } = req.body;
+                const { ...data } = req.body;
 
-            await CreateAnyCreature(data);
+                await CreateAnyCreature(data);
 
-            const { rows } = await sql.query(query);
-            return res.status(200).json(rows);
+                const { rows } = await sql.query(query);
+
+                return res.status(200).json(rows);
+                
+            } else {
+                return res.status(401).json({
+                  "errorMessage": "usuario não autorizado a fazer esta operação"
+                })
+            }
 
         } catch (err) {
             return res.status(500).json(err);

@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { QueryResult, sql } from "@vercel/postgres";
 import { createMinorCharacters } from "../../models/Chars/InsertMinorChars";
+import Decipher from "../../../middlewares/token";
+require('dotenv').config();
 
 class MinorCharsController {
     public async ViewMinors(req: Request, res: Response) {
@@ -18,12 +20,22 @@ class MinorCharsController {
     public async InsertMinors(req: Request, res: Response) {
         try {
             const { ...data } = req.body;
+            const token: any = req.headers['x-acess-token']
+        
+            if(Decipher(token) === process.env.SECRET) {
+                await createMinorCharacters(data);
 
-            await createMinorCharacters(data);
+                const query = 'SELECT * FROM minorschars';
+                const { rows } = await sql.query(query);
 
-            const query = 'SELECT * FROM minorschars';
-            const { rows } = await sql.query(query);
-            return res.status(200).json(rows);
+                return res.status(200).json(rows);
+
+            }   else {
+                return res.status(401).json({
+                  "errorMessage": "usuario não autorizado a fazer esta operação"
+                })
+            }
+
         } catch (err) {
             return res.status(500).json(err);
         }
