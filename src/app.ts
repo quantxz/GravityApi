@@ -68,15 +68,23 @@ app.use((req, res, next) => {
 
 app.get('/style.css', (req, res) => {
   res.type('text/css');
-  res.sendFile(path.join(__dirname, 'style.css'));
+  res.sendFile(path.join(__dirname, 'stle.css'));
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Public/index.html'));
+  res.sendFile(path.join(__dirname, 'Public/idex.html'));
 });
 
 app.get('/billimageimagebillluminiumsad', (req, res) => {
   res.sendFile(path.join(__dirname, 'Public/image-removebg-preview-7.png'));
 });
+
+app.get('/dipperimageimagebillluminiumsad', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Public/dipper.png'));
+});
+
+app.get('/Mabelimageimagebillluminiumsad', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Public/Mabel.png'))
+})
 
 export default app;
