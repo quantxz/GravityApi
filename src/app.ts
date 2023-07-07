@@ -68,11 +68,11 @@ app.use((req, res, next) => {
 
 app.get('/style.css', (req, res) => {
   res.type('text/css');
-  res.sendFile(path.join(__dirname, 'stle.css'));
+  res.sendFile(path.join(__dirname, 'style.css'));
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Public/idex.html'));
+  res.sendFile(path.join(__dirname, 'Public/index.html'));
 });
 
 app.get('/billimageimagebillluminiumsad', (req, res) => {
