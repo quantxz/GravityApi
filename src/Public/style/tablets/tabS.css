@@ -1,0 +1,74 @@
+@media (max-width: 800px) and (max-height: 1280px) {
+    .cards {
+        margin-top: 55vh;
+        top: -53vh;
+    }
+
+    .cards ul {
+        margin-left: 27vw;
+    }
+
+    .cards ul li{
+        width: 45vw;
+        left: -15vw;
+    }
+
+    .down span{
+        font-size: 16px;
+        margin-left: 0.8vw;
+    }
+
+    .apresentation > .text{
+        min-width: 55vw;
+    }
+
+    .apresentation > .text  > .principal {
+        margin-top: 15vw;
+        font-size: 25px;
+    }
+
+    .apresentation > .text > .desc {
+        font-size: 19px;
+    }
+
+    .apresentation > .text button {
+        min-width: 40vw;
+        top: 6vw;
+        left: -6vw;
+    }
+
+    .cards ul li img{
+        width: 17vw;
+        margin-left: 0.8vw;
+    }
+
+    .logo-image {
+        margin-top: 3vw
+    }
+
+    .bill-image img{
+        top: 25vw;
+        height: 75vh;
+        width: 75vw;
+    }
+
+    .bill-image{
+        position: absolute;
+        top: 12vw;
+        left: -7vw;
+        height: 65vh;
+        width: 55vw;
+        min-width: 45vw;
+        z-index: 1;
+    }
+
+    .nav-contents {
+        margin-left: -65vw;
+        margin-top: 1.5vh;
+    }
+
+    .nav-contents ul li {
+        font-size: 25px;
+    }
+
+}

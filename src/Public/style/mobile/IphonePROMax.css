@@ -1,0 +1,71 @@
+@media screen and (max-width: 428px) {
+
+    *{
+        overflow-y: visible;
+    }
+
+    .bill-image {
+        display: none;
+    }
+
+    .cards {
+        top: 2vh;
+    }
+
+    .cards li:not(:first-child) {
+        display: none;
+    }
+
+    .cards ul li {
+        width: 95vw;
+        height: 18vh;
+    }
+
+    .cards ul li img{
+        width: 37vw;
+        height: 16vh;
+    }
+    
+    span {
+        display: none;
+    }
+
+    .nav-contents {
+        margin-left: -130vw;
+    }
+
+    .nav-contents ul {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .nav-contents ul li {
+        font-size: 20px;
+    }
+
+    .nav-contents ul li:not(:first-child) {
+        display: none;
+    }
+      
+    .nav-contents ul:hover li {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        background-color: #fff;
+    }
+
+    .apresentation > .text button {
+        min-width: 40vw;
+        left: 15vw;
+    }
+
+    .apresentation > .text > .principal {
+        width: 70vw;
+    }
+
+    .apresentation > .text > .desc {
+        width: 90vw;
+    }
+
+}
