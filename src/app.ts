@@ -29,7 +29,7 @@ class App {
     this.server.use(cors());
     this.server.use(express.json());
     this.server.use(express.static('src'));
-    this.server.use(express.static('src/FrontEnd'));
+    this.server.use(express.static('Public'));
     this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, options));
   }
 
@@ -59,7 +59,7 @@ app.get('/style.css', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'FrontEnd/index.html'));
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 export default app;
