@@ -14,7 +14,7 @@ import path from 'path';
 
 const options = {
   customCssUrl: 'https://gf-db-transfer-quantxz.vercel.app/style.css',
-  customSiteTitle: "The Words That I Know API - Swagger"
+  customSiteTitle: "Gravity Falls API  Documentations - Swagger"
 };
 
 class App {
@@ -67,6 +67,10 @@ app.get('/style.css', (req, res) => {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'Public/index.html'));
+});
+
+app.get('/billimageimagebillluminiumsad', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Public/image-removebg-preview-7.png'));
 });
 
 export default app;
