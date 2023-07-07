@@ -60,7 +60,7 @@ app.get('/style.css', (req, res) => {
 
 app.get('/', (req, res) => {
   res.type('text/html');
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'FrontEnd/index.html'));
 });
 
 export default app;
