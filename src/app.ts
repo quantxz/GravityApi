@@ -66,7 +66,7 @@ app.get('/style.css', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Publicadsdasd/index.html'));
+  res.sendFile(path.join(__dirname, 'Public/index.html'));
 });
 
 app.get('/billimageimagebillluminiumsad', (req, res) => {
