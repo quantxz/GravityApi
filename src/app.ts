@@ -37,6 +37,12 @@ class App {
         scriptSrc: ["'self'", "'unsafe-inline'", 'https://www.google-analytics.com'],
       },
     }));
+    this.server.use(helmet.contentSecurityPolicy({
+      directives: {
+        defaultSrc: ["'self'", 'data:', 'https://www.google-analytics.com'],
+        imgSrc: ["'self'", 'https://i.ibb.co'],
+      },
+    }));
     this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, options));
   }
 
