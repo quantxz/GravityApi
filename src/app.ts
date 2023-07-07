@@ -12,6 +12,10 @@ import CreaturesRoutes from './routes/creatures.routes';
 import routes from './routes/main.routes';
 import path from 'path';
 
+const options = {
+  customCssUrl: 'https://gf-db-transfer-quantxz.vercel.app/style.css',
+  customSiteTitle: "The Words That I Know API - Swagger"
+};
 
 class App {
   public server: express.Application;
@@ -30,10 +34,10 @@ class App {
     this.server.use(helmet.contentSecurityPolicy({
       directives: {
         defaultSrc: ["'self'", 'data:', 'https://www.google-analytics.com'],
-        imgSrc: ["'self'", 'https://i.ibb.co'],
+        scriptSrc: ["'self'", "'unsafe-inline'", 'https://www.google-analytics.com'],
       },
     }));
-    this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
+    this.server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, options));
   }
 
   private routes() {
