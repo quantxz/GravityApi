@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/pc/style.css">
+    <link rel="stylesheet" href="./style/macbook/style.css">
+    <link rel="stylesheet" href="./style/tablets/Fold.css">
+    <link rel="stylesheet" href="./style/tablets/SurfaceDuo.css">
+    <link rel="stylesheet" href="./style/tablets/tabS.css">
+    <link rel="stylesheet" href="./style/tablets/IpadAir.css">
+    <link rel="stylesheet" href="./style/tablets/ipadMini.css">
+    <link rel="stylesheet" href="./style/mobile/IphonePRO.css">
+    <link rel="stylesheet" href="./style/mobile/iphone.css">
+    <link rel="stylesheet" href="./style/mobile/IphonePROMax.css">
+    <link rel="stylesheet" href="./style/mobile/Google.css">
+    <link rel="stylesheet" href="./style/all.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="./style/assets/ScreenShot Tool -20230706130416.png" alt="" class="logo-image">
+        </div>
+          
+          <div class="nav-contents">
+            <ul>
+              <li active="true">Home</li>
+              <li>About</li>
+              <li>Documentation</li>
+              <li><a href="mailto:anderson.backdev@gmail.com?subject=Api Gravity Falls ">Developer</a></li>
+            </ul>
+          </div>
+    </nav>
+
+    <main>
+        <div class="apresentation">
+            <div class="text">
+                <h1 class="frase principal">Crie seu próprio Diário, <br> e descubra mais sobre esse mundo</h1>
+                <h2 class="desc">Bem-vindo ao fascinante mundo de Gravity Falls, onde mistérios, segredos e personagens cativantes estão à sua espera! Agora, com a mais nova API, JOURNAL 4, você pode desvendar todos os segredos ocultos e mergulhar fundo na vida dos personagens icônicos desse universo.</h2>
+
+                <button><a href="https://gf-db-transfer-quantxz.vercel.app/api-docs/" target="_blank">Descubra a API</a></button>
+            </div>
+            <div class="image">
+                <img src="https://i.ibb.co/C2Pc0JX/image-removebg-preview-7.png" alt="" class="bill-image">
+            </div>
+        </div>
+
+        <div class="cards">
+            
+            <ul class="cards-main">
+                
+                <li class="card-1">
+
+                    <div class="top">
+                        <img src="" alt="" class="dipperImage">
+                        <h1>Mason Pines <br> <p>(protagonist)</p> </h1>
+                    </div>
+                    <div class="down">
+                        <span>Mason 'Dipper' Pines is a smart, curious, and adventurous 13-year-old boy, <br> and is the protagonist of the series.
+                        </span>
+                    </div>
+                </li>
+
+                <li>             
+
+                    <div class="top">
+                        <img src="" alt="" class="mabelImage">
+                        <h1>Mabel Pines <br> <p>(protagonist)</p> </h1>
+                    </div>
+
+                    <div class="down">
+                        <span>
+                            Mabel Pines is a 13-year-old girl <br>(12 prior to the events of the finale), and is the deuteragonist of the series.
+                        </span>
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </main>
+
+    <script src="./js/main.js"></script>
+
+    <script>
+        //logo
+        var dragImage = document.querySelector(".logo-image");
+        //bill
+        var dragBillImage = document.querySelector(".bill-image");
+
+        dragImage.addEventListener("dragstart", function(event) {
+        event.preventDefault();
+        });
+
+        dragBillImage.addEventListener("dragstart", function(event) {
+        event.preventDefault();
+        });
+    </script>
+
+</body>
+</html>

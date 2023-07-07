@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'poppins';
+}
+
+body {
+    overflow: hidden;
+}
+
+:root {
+    --bg-navColor: #003432
+}
+
+nav {
+    position: absolute;
+    width: 100vw;
+    height: 10vh;
+    box-shadow: 2px 2px 13px #00000017;
+    z-index: 1;
+}
+
+nav .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    left: 1.2vw;
+}
+
+nav ul {
+    font-weight: 600;
+    position: relative;
+    font-size: 18px;
+    width: 35vw;
+    margin-left: 50rem;
+    top: 0.9rem;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    padding: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul li:hover {
+    padding: 5px;
+    cursor: pointer;
+}
+
+main {
+    position: absolute;
+    top: 3.3rem;
+    width: 100vw;
+    height: 46vh;
+    z-index: 0;
+}
+main > .apresentation > .text {
+    position: absolute;
+    width: 40vw;
+    height: 37vh;
+}
+
+main > .apresentation > .text h1 {
+    margin-top: 4rem;
+    font-size: 25px;
+    margin-left: 2rem;
+}
+
+main > .apresentation > .text h2 {
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+main > .apresentation > .text button {
+    position: relative;
+    margin-left: 10vw;
+    margin-top: 2vw;
+    background: linear-gradient(135deg, #6697ec, #b45ce4);
+    border: none;
+    color: #fff;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+main > .apresentation > .text button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main > .apresentation > .image img {
+    position: relative;
+    margin-left: 60vw;
+    width: 24vw;
+    margin-top: -15vh;
+    z-index: 0;
+}
+
+.cards {
+    user-select: none;
+    position: relative;
+    height: 45vh;
+    margin-top: -10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+  
+.cards ul {
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-left: 27vw;
+}
+  
+.cards ul li {
+    position: relative;
+    height: 30vh;
+    width: 32vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3vw;
+    border-radius: 5px;
+    box-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.top {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    top: 1vh;
+    left: 0.6vw;
+}
+
+.top h1 {
+    font-size: 25px;
+    padding-left: 15px;
+}
+
+.top p {
+    font-size: 17px;
+    color: #00000081;
+}
+
+.down span {
+    position: relative;
+    top: 5vh;
+    font-weight: 600;
+    font-size: 15px;
+    left: 0.7vw;
+}
+  
+.cards ul li img{
+    width: 7vw;
+    border-radius: 5px;
+    height: 12vh;
+}

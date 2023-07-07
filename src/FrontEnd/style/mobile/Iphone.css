@@ -1,0 +1,57 @@
+@media screen and (max-width: 380px) {
+
+    .bill-image {
+        display: none;
+    }
+
+    .cards {
+        margin-top: 45vh;
+        left: -48vw;
+        display: none;
+    }
+    
+    span {
+        display: none;
+    }
+
+    .nav-contents {
+        margin-left: -135vw;
+    }
+
+    .nav-contents ul {
+        display: flex;
+        flex-direction: column;
+        left: -22vw;
+    }
+
+    .nav-contents ul li {
+        font-size: 20px;
+    }
+
+    .nav-contents ul li:not(:first-child) {
+        display: none;
+    }
+      
+    .nav-contents ul:hover li {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        background-color: #fff;
+    }
+
+    .apresentation > .text button {
+        min-width: 40vw;
+        top: 25px;
+        left: 15vw;
+    }
+
+    .apresentation > .text > .principal {
+        width: 50vw;
+    }
+
+    .apresentation > .text > .desc {
+        width: 60vw;
+        font-size: 15px;
+    }
+
+}
