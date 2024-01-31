@@ -144,6 +144,9 @@ A journal4 é uma API que foi desenvolvida inspirada na POKEAPI, funcionando de 
 
      [Linkedin Anderson](https://www.linkedin.com/in/anderson-silva-725561282/) | [Linkedin Bryan](Ainda nâo tem)
 
+## 📜 Licença
+Este projeto esta sob a licença MIT - acesse os detalhes em [Licença](https://github.com/quantxz/GravityApi?tab=MIT-1-ov-file)
+
   ## ⚠️ Avisos
   * 1º - a função de requisições de episodio por titulo usando o titulo em portugues brasileiro sera aperfeiçoado na V2 do projeto
   * 2º - a função de requisições de livros por titulo usando o titulo em portugues brasileiro sera aperfeiçoado na V2 do projeto
