@@ -140,9 +140,9 @@ A journal4 é uma API que foi desenvolvida inspirada na POKEAPI, funcionando de 
   * reporte de algum bug ou duvida para - anderson.backdev@gmail.com
   * follow nas redes sociais dos devs:
 
-     [instagram Anderson](https://www.instagram.com/andersonlxz) | [instagram Bryan](https://www.instagram.com/bryan_devs/)
+     [![Instagram](https://img.shields.io/badge/Instagram-Anderson-%23E4405F?style=social&logo=instagram)](https://www.instagram.com/andersonlxz) | [![Instagram](https://img.shields.io/badge/Instagram-Bryan-%23E4405F?style=social&logo=instagram)](https://www.instagram.com/bryan_devs/)
 
-     [Linkedin Anderson](https://www.linkedin.com/in/anderson-silva-725561282/) | [Linkedin Bryan](Ainda nâo tem)
+     [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/caraaleatoriu.svg?style=social&label=Follow%20caraaleatoriu)](https://twitter.com/caraaleatoriu) | [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/BryanDevsPort.svg?style=social&label=Follow%20BryanDevsPort)](https://twitter.com/BryanDevsPort)
 
 ## 📜 Licença
 Este projeto esta sob a licença MIT - acesse os detalhes em [Licença](https://github.com/quantxz/GravityApi?tab=MIT-1-ov-file)
